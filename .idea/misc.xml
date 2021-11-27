@@ -4,6 +4,24 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/activity_main.xml" value="0.15625" />
+        <entry key="..\:/Users/Highwall/Desktop/Documenti/git/Artify_2/app/src/main/res/drawable/dashboard_bg.xml" value="0.3828125" />
+        <entry key="..\:/Users/Highwall/Desktop/Documenti/git/Artify_2/app/src/main/res/drawable/dashboard_bottom_bg.xml" value="0.3828125" />
+        <entry key="..\:/Users/Highwall/Desktop/Documenti/git/Artify_2/app/src/main/res/drawable/ic_dashboard.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Highwall/Desktop/Documenti/git/Artify_2/app/src/main/res/drawable/rounded_corners.xml" value="0.3828125" />
+        <entry key="..\:/Users/Highwall/Desktop/Documenti/git/Artify_2/app/src/main/res/layout-land/activity_dashboard.xml" value="0.21" />
+        <entry key="..\:/Users/Highwall/Desktop/Documenti/git/Artify_2/app/src/main/res/layout/activity_dashboard.xml" value="0.29393115942028986" />
+        <entry key="..\:/Users/Highwall/Desktop/Documenti/git/Artify_2/app/src/main/res/layout/drawer_menu.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Highwall/Desktop/Documenti/git/Artify_2/app/src/main/res/layout/drawer_top.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Highwall/Desktop/Documenti/git/Artify_2/app/src/main/res/menu/drawer_menu.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/mauro/Desktop/git/Artify/app/src/main/res/drawable/dashboard_bg.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/mauro/Desktop/git/Artify/app/src/main/res/drawable/edit_user_img_ic.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/mauro/Desktop/git/Artify/app/src/main/res/drawable/rounded_corners.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/mauro/Desktop/git/Artify/app/src/main/res/layout/activity_dashboard.xml" value="0.3625" />
+        <entry key="..\:/Users/mauro/Desktop/git/Artify_clone/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21875" />
+        <entry key="..\:/Users/mauro/Desktop/git/Artify_clone/app/src/main/res/drawable/dashboard_bg.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/mauro/Desktop/git/Artify_clone/app/src/main/res/drawable/dashboard_bottom_bg.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/mauro/Desktop/git/Artify_clone/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21875" />
+        <entry key="..\:/Users/mauro/Desktop/git/Artify_clone/app/src/main/res/layout/activity_dashboard.xml" value="0.34057971014492755" />
       </map>
     </option>
   </component>
@@ -12,5 +30,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.21" />
+      </ProjectState>
+    </option>
   </component>
 </project>

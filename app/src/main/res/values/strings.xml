@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Artify</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="welcome">Benvenuto, </string>
+    <string name="user">User</string>
+    <string name="mailIns"><b>mauropio.altamura@outlook.it</b></string>
+    <string name="mail">E-mail:</string>
+    <string name="name">Nome:</string>
+    <string name="nameIns"><b>Mauro Pio Altamura</b></string>
+    <string name="points">I tuoi punti:</string>
+    <string name="pointsReached"><b>1200</b></string>
+    <string name="badges">Badges:</string>
+    <string name="path">Percorso</string>
+    <string name="settings">Impostazioni</string>
 </resources>
