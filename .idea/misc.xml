@@ -4,6 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/activity_main.xml" value="0.15625" />
+        <entry key="..\:/Users/Panun/Desktop/Artify/app/src/main/res/drawable/login_button_style.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/Panun/Desktop/Artify/app/src/main/res/drawable/reg_button_style.xml" value="0.17743055555555556" />
+        <entry key="..\:/Users/Panun/Desktop/Artify/app/src/main/res/layout/login.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Panun/Desktop/Artify/app/src/main/res/layout/login_prova.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Panun/Desktop/Artify/app/src/main/res/layout/registrazione.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Panun/Desktop/Artify/app/src/main/res/layout/sign_up.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Panun/Desktop/Artify/app/src/main/res/layout/sing_up.xml" value="0.16666666666666666" />
       </map>
     </option>
   </component>
