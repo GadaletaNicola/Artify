@@ -1,14 +1,14 @@
 <resources>
+
+    <!-- Stringhe Activity lista_percorsi/listadapter  -->
     <string name="app_name">Artify</string>
-    <string name="login_text">Accedi ad Artify</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
-    <string name="login_button">Accedi</string>
-    <string name="reg_text">Registrati ad Artify</string>
-    <string name="name">Nome</string>
-    <string name="surname">Cognome</string>
-    <string name="email">Email</string>
-    <string name="signup_button">Registrati</string>
-    <string name="not_accounted">Non hai ancora un account? Registrati!</string>
-    <string name="accounted">Hai già un account? Accedi!</string>
+    <string name="PercorsiHeader">Percorsi</string>
+    <string name="TestoListAdapterDefault">Testo Base</string>
+
+
+    <!-- Errori -->
+    <string name="ReadDbError">Errore! Impossibile leggere dal Database</string>
+
+    <!-- Descrizioni -->
+    <string name="DescrizioneLogoPercorso">Immagine identificativa del percorso</string>
 </resources>
