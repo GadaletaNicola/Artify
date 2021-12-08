@@ -11,8 +11,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="68dp"
-        android:background="@color/VeryLightBlue"
-        android:elevation="1dp">
+
+        android:elevation="1dp"
+        android:background="?android:selectableItemBackground"
+        android:id="@+id/CardPercorso">
 
         <ImageView
             android:id="@+id/LogoPercorso"

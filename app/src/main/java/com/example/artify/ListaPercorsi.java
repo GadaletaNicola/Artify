@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -19,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 // inserire l'onclick event listener
-public class ListaPercorsi extends AppCompatActivity {
+public class ListaPercorsi extends AppCompatActivity{
     private ArrayList<Percorso> percorsi = null;
     private FirebaseDatabase rootNode = null;
     private final String ROUTES_PATH = "percorsi/";
@@ -33,10 +34,7 @@ public class ListaPercorsi extends AppCompatActivity {
         ListaPercorsi = findViewById(R.id.ListaPerocrsi);
 
         rootNode = FirebaseDatabase.getInstance("https://artify-2ead0-default-rtdb.europe-west1.firebasedatabase.app/");
-
         DatabaseReference routesPath = rootNode.getReference(ROUTES_PATH);
-
-
         routesPath.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -50,10 +48,9 @@ public class ListaPercorsi extends AppCompatActivity {
                     percorsi.add(i,percorso);
                     i++;
                 }
-                listadapter adapter = new listadapter(percorsi,getApplicationContext());
+                listadapter adapter = new listadapter(percorsi, getApplicationContext());
                 ListaPercorsi.setAdapter(adapter);
                 ListaPercorsi.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-
 
             }
 
@@ -68,12 +65,11 @@ public class ListaPercorsi extends AppCompatActivity {
 
     }
 
-
-
     @Override
     protected void onStart() {
         super.onStart();
         percorsi = new ArrayList<>();
     }
+
 
 }

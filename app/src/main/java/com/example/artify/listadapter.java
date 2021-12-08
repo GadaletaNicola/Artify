@@ -8,11 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -30,6 +34,7 @@ public class listadapter extends RecyclerView.Adapter<listadapter.ListAdapterHol
     public listadapter(@NonNull ArrayList<Percorso> percorsi,Context context){
             this.percorsi = percorsi;
             this.context = context;
+
     }
 
 
@@ -51,8 +56,17 @@ public class listadapter extends RecyclerView.Adapter<listadapter.ListAdapterHol
                 Glide.with(context).load(uri.toString()).into(holder.immaginePercorso);
 
             }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
+            }
         });
         holder.nomePercorso.setText(percorsi.get(position).getNomePercorso());
+        holder.parentLayout.setOnClickListener(view -> {
+            Toast.makeText(context,percorsi.get(position).getNomePercorso(),Toast.LENGTH_LONG).show();
+        });
+
     }
 
     @Override
@@ -60,13 +74,17 @@ public class listadapter extends RecyclerView.Adapter<listadapter.ListAdapterHol
         return percorsi.size();
     }
 
-    static class ListAdapterHolder extends RecyclerView.ViewHolder{
-        TextView nomePercorso = null;
-        ImageView immaginePercorso = null;
+    static class ListAdapterHolder extends RecyclerView.ViewHolder {
+        private TextView nomePercorso = null;
+        private ImageView immaginePercorso = null;
+
+        private ConstraintLayout parentLayout = null;
         public ListAdapterHolder(@NonNull View itemView) {
             super(itemView);
             nomePercorso = itemView.findViewById(R.id.NomePercorso);
             immaginePercorso = itemView.findViewById(R.id.LogoPercorso);
+            parentLayout = itemView.findViewById(R.id.CardPercorso);
+
         }
     }
 }

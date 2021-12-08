@@ -8,8 +8,8 @@
     tools:context=".ListaPercorsi"
     android:defaultFocusHighlightEnabled="true">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/HeadBanner"
         android:layout_width="421dp"
         android:layout_height="74dp"
         android:background="@color/DarkLightBlue"
@@ -20,17 +20,36 @@
         android:elevation="1dp"
         android:defaultFocusHighlightEnabled="true">
 
+        <ImageView
+            android:id="@+id/UploadIcon"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/DescrizioneUploadIco"
+            android:src="@drawable/ic_baseline_file_upload_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.689"
+            android:background="?android:selectableItemBackground"/>
+
         <TextView
             android:id="@+id/textView"
-            android:layout_width="405dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="17.5dp"
-            android:layout_marginTop="17.5dp"
+            android:layout_width="125dp"
+            android:layout_height="49dp"
             android:text="@string/PercorsiHeader"
             android:textColor="@color/white"
             android:textSize="30sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/UploadIcon"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:layout_width="343dp"
@@ -41,19 +60,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/HeadBanner">
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <androidx.recyclerview.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ListaPerocrsi"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                />
-        </LinearLayout>
+                android:layout_height="match_parent" />
+
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

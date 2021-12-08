@@ -11,4 +11,5 @@
 
     <!-- Descrizioni -->
     <string name="DescrizioneLogoPercorso">Immagine identificativa del percorso</string>
+    <string name="DescrizioneUploadIco">Upload Ico</string>
 </resources>
