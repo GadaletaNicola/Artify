@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,18 +20,21 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 // inserire l'onclick event listener
-public class ListaPercorsi extends AppCompatActivity{
-    private ArrayList<Percorso> percorsi = null;
+public class ListaZone extends AppCompatActivity{
+    private ArrayList<Zone> zone = null;
     private FirebaseDatabase rootNode = null;
-    private final String ROUTES_PATH = "percorsi/";
-    private RecyclerView ListaPercorsi = null;
+    private final String ROUTES_PATH = "zone/";
+    private RecyclerView ListaZone = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_percorsi);
+        setContentView(R.layout.activity_lista_zone);
 
-        ListaPercorsi = findViewById(R.id.ListaPerocrsi);
+        Intent i = getIntent();
+
+
+        ListaZone = findViewById(R.id.ListaZoneMuseo);
 
         rootNode = FirebaseDatabase.getInstance("https://artify-2ead0-default-rtdb.europe-west1.firebasedatabase.app/");
         DatabaseReference routesPath = rootNode.getReference(ROUTES_PATH);
@@ -40,17 +43,15 @@ public class ListaPercorsi extends AppCompatActivity{
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int i=0;
                 for (DataSnapshot sn : snapshot.getChildren()) {
-                    Percorso percorso = new Percorso();
-                    percorso.setNomePercorso(sn.getKey());
-                    percorso.setImg(sn.getValue(Percorso.class).getImg());
-                    percorso.setVoto(sn.getValue(Percorso.class).getVoto());
-                    percorso.setTipoPercorso(sn.getValue(Percorso.class).getTipoPercorso());
-                    percorsi.add(i,percorso);
+                    Zone zone = new Zone();
+                    zone.setNomeZona(sn.getKey());
+                    zone.setImg(sn.getValue(Zone.class).getImg());
+                    com.example.artify.ListaZone.this.zone.add(i, zone);
                     i++;
                 }
-                listadapter adapter = new listadapter(percorsi, getApplicationContext());
-                ListaPercorsi.setAdapter(adapter);
-                ListaPercorsi.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                listadapter adapter = new listadapter(zone, getApplicationContext());
+                ListaZone.setAdapter(adapter);
+                ListaZone.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
             }
 
@@ -68,7 +69,8 @@ public class ListaPercorsi extends AppCompatActivity{
     @Override
     protected void onStart() {
         super.onStart();
-        percorsi = new ArrayList<>();
+        zone = new ArrayList<>();
+
     }
 
 

@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent i = new Intent(this,ListaPercorsi.class);
+        Intent i = new Intent(this, tipo_percorso.class);
         startActivity(i);
     }
 }

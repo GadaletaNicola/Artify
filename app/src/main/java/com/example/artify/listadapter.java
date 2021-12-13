@@ -2,7 +2,6 @@ package com.example.artify;
 
 import android.content.Context;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,14 +10,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -26,13 +23,13 @@ import com.google.firebase.storage.StorageReference;
 import java.util.ArrayList;
 
 public class listadapter extends RecyclerView.Adapter<listadapter.ListAdapterHolder> {
-    private ArrayList<Percorso> percorsi = null;
+    private ArrayList<Zone> zone = null;
     private Context context = null;
 
 
 
-    public listadapter(@NonNull ArrayList<Percorso> percorsi,Context context){
-            this.percorsi = percorsi;
+    public listadapter(@NonNull ArrayList<Zone> percorsi, Context context){
+            this.zone = percorsi;
             this.context = context;
 
     }
@@ -48,12 +45,12 @@ public class listadapter extends RecyclerView.Adapter<listadapter.ListAdapterHol
     public void onBindViewHolder(@NonNull ListAdapterHolder holder, int position) {
 
 
-        StorageReference gsRef = FirebaseStorage.getInstance().getReferenceFromUrl(percorsi.get(position).getImg());
+        StorageReference gsRef = FirebaseStorage.getInstance().getReferenceFromUrl(zone.get(position).getImg());
 
         gsRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                Glide.with(context).load(uri.toString()).into(holder.immaginePercorso);
+                Glide.with(context).load(uri.toString()).into(holder.immagineZona);
 
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -62,27 +59,27 @@ public class listadapter extends RecyclerView.Adapter<listadapter.ListAdapterHol
                 Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
-        holder.nomePercorso.setText(percorsi.get(position).getNomePercorso());
+        holder.nomeZona.setText(zone.get(position).getNomeZona());
         holder.parentLayout.setOnClickListener(view -> {
-            Toast.makeText(context,percorsi.get(position).getNomePercorso(),Toast.LENGTH_LONG).show();
+            Toast.makeText(context,zone.get(position).getNomeZona(),Toast.LENGTH_LONG).show();
         });
 
     }
 
     @Override
     public int getItemCount() {
-        return percorsi.size();
+        return zone.size();
     }
 
     static class ListAdapterHolder extends RecyclerView.ViewHolder {
-        private TextView nomePercorso = null;
-        private ImageView immaginePercorso = null;
+        private TextView nomeZona = null;
+        private ImageView immagineZona = null;
 
         private ConstraintLayout parentLayout = null;
         public ListAdapterHolder(@NonNull View itemView) {
             super(itemView);
-            nomePercorso = itemView.findViewById(R.id.NomePercorso);
-            immaginePercorso = itemView.findViewById(R.id.LogoPercorso);
+            nomeZona = itemView.findViewById(R.id.NomeZona);
+            immagineZona = itemView.findViewById(R.id.LogoZona);
             parentLayout = itemView.findViewById(R.id.CardPercorso);
 
         }

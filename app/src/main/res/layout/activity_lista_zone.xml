@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/LightBlue"
-    tools:context=".ListaPercorsi"
+    tools:context=".ListaZone"
     android:defaultFocusHighlightEnabled="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,35 +18,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:elevation="1dp"
+        android:outlineAmbientShadowColor="@color/black"
         android:defaultFocusHighlightEnabled="true">
 
-        <ImageView
-            android:id="@+id/UploadIcon"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="@string/DescrizioneUploadIco"
-            android:src="@drawable/ic_baseline_file_upload_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.689"
-            android:background="?android:selectableItemBackground"/>
-
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="125dp"
-            android:layout_height="49dp"
-            android:text="@string/PercorsiHeader"
+            android:id="@+id/ZonaMuseoHeader"
+            android:layout_width="186dp"
+            android:layout_height="43dp"
+            android:text="@string/ZoneMuseoHeader"
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/UploadIcon"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.068"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.8" />
+            app:layout_constraintVertical_bias="0.516" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -57,13 +45,14 @@
         android:background="@color/DarkLightBlue"
         android:elevation="1dp"
         android:defaultFocusHighlightEnabled="true"
+        android:outlineAmbientShadowColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/HeadBanner">
 
         <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/ListaPerocrsi"
+                android:id="@+id/ListaZoneMuseo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

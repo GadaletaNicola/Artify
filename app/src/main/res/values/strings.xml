@@ -1,15 +1,20 @@
 <resources>
 
-    <!-- Stringhe Activity lista_percorsi/listadapter  -->
+    <!-- Stringhe Activity lista_zone/listadapter  -->
     <string name="app_name">Artify</string>
-    <string name="PercorsiHeader">Percorsi</string>
+    <string name="ZoneMuseoHeader">Zone Museo</string>
     <string name="TestoListAdapterDefault">Testo Base</string>
 
+    <!-- Stringhe Activity tipo percorso  -->
+    <string name="TipoPercorsiHeader">Tipo Percorsi</string>
+    <string name="PercorsoBreve">Breve</string>
+    <string name="PercorsoMedio">Medio</string>
+    <string name="PercorsoLungo">Lungo</string>
 
     <!-- Errori -->
     <string name="ReadDbError">Errore! Impossibile leggere dal Database</string>
 
     <!-- Descrizioni -->
-    <string name="DescrizioneLogoPercorso">Immagine identificativa del percorso</string>
+    <string name="DescrizioneLogoPercorso">Immagine identificativa del zone</string>
     <string name="DescrizioneUploadIco">Upload Ico</string>
 </resources>
