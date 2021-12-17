@@ -20,38 +20,34 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-
 import java.util.ArrayList;
 
-public class listadapter extends RecyclerView.Adapter<listadapter.ListAdapterHolder> {
-    private final ArrayList<Zone> zone;
+public class lista_opere_adapter extends RecyclerView.Adapter<lista_opere_adapter.ListAdapterHolder>{
+    private final ArrayList<Opera> opere;
     private final Context context;
     private final Intent contextIntent;
 
-
-    public listadapter(@NonNull ArrayList<Zone> zone, Context context,Intent contextIntent){
-            this.zone = zone;
-            this.context = context;
-            this.contextIntent = contextIntent;
+    public lista_opere_adapter(@NonNull ArrayList<Opera> opere, Context context,Intent contextIntent){
+        this.opere = opere;
+        this.context = context;
+        this.contextIntent = contextIntent;
     }
-
 
     @NonNull
     @Override
     public ListAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ListAdapterHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.listadapeter,parent,false));
+        return new ListAdapterHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_opere_adapter,parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ListAdapterHolder holder, int position) {
-        StorageReference gsRef = FirebaseStorage.getInstance().getReferenceFromUrl(zone.get(position).getImg());
-
+        StorageReference gsRef = FirebaseStorage.getInstance().getReferenceFromUrl(opere.get(position).getImg());
 
         gsRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
 
             @Override
             public void onSuccess(Uri uri) {
-                Glide.with(context).load(uri.toString()).into(holder.immagineZona);
+                Glide.with(context).load(uri.toString()).into(holder.immagineOpera);
 
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -62,37 +58,33 @@ public class listadapter extends RecyclerView.Adapter<listadapter.ListAdapterHol
             }
         });
 
-        holder.nomeZona.setText(zone.get(position).getNomeZona());
-
+        holder.nomeOpera.setText(opere.get(position).getTitolo());
         holder.parentLayout.setOnClickListener(view -> {
-            Intent switcher  = new Intent(context,ListaOpere.class);
-            switcher.putExtra("TipoPercorso", contextIntent.getStringExtra("TipoPercorso"));
-            switcher.putExtra("ZonaCliccata",zone.get(position).getNomeZona());
-            context.startActivity(switcher);
+            /*
+                Implementare onClick:
+                Intent swap  = new Intent(context,ListaOpere.class);
+                context.startActivity(swap);
+            */
         });
-
     }
 
     @Override
     public int getItemCount() {
-        return zone.size();
+        return opere.size();
     }
 
 
-    static class ListAdapterHolder extends RecyclerView.ViewHolder{
-        private final TextView nomeZona;
-        private final ImageView immagineZona;
+    static class ListAdapterHolder extends RecyclerView.ViewHolder {
+        private final TextView nomeOpera;
+        private final ImageView immagineOpera;
         private final ConstraintLayout parentLayout;
 
         public ListAdapterHolder(@NonNull View itemView) {
             super(itemView);
-            nomeZona = itemView.findViewById(R.id.NomeZona);
-            immagineZona = itemView.findViewById(R.id.LogoZona);
-            parentLayout = itemView.findViewById(R.id.CardZona);
+            nomeOpera = itemView.findViewById(R.id.NomeOpera);
+            immagineOpera = itemView.findViewById(R.id.LogoOpera);
+            parentLayout = itemView.findViewById(R.id.CardOpera);
 
         }
-
-
     }
-
 }

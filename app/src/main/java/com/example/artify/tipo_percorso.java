@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.HashMap;
 
 public class tipo_percorso extends AppCompatActivity {
     private Button btnClicked = null;
@@ -18,11 +17,11 @@ public class tipo_percorso extends AppCompatActivity {
         setContentView(R.layout.activity_tipo_percorso);
     }
 
-    // da commentare
+
     public void switchToListaZone(View view){
         btnClicked = findViewById(view.getId());
 
-        Intent intent = new Intent(this,ListaZone.class).putExtra("clickedBtn",btnClicked.getText().toString());
-        startActivity(intent);
+        Intent switcher = new Intent(this,ListaZone.class).putExtra("TipoPercorso", btnClicked.getText().toString());
+        startActivity(switcher);
     }
 }

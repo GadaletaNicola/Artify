@@ -1,12 +1,8 @@
 package com.example.artify;
 
-import java.util.ArrayList;
-
 public class Zone {
     private String nomeZona="";
     private String img = "";
-
-
 
     public Zone(){
 
@@ -21,10 +17,6 @@ public class Zone {
     public void setNomeZona(String nomeZona) {
         this.nomeZona = nomeZona;
     }
-
-
-
-
 
 
     public String getImg() {

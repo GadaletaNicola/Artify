@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/VeryLightBlue"
+    tools:context=".tipo_percorso">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/TipoPercorsoHeader"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:orientation="vertical"
+        android:elevation="1dp"
+        android:outlineAmbientShadowColor="@color/black"
+        android:defaultFocusHighlightEnabled="true"
+        android:background="@color/DarkLightBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="186dp"
+            android:layout_height="43dp"
+            android:text="@string/TipoPercorsiHeader"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.029"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.516" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/ButtonContainer"
+        android:layout_width="597dp"
+        android:layout_height="278dp"
+        android:background="@color/DarkLightBlue"
+        android:defaultFocusHighlightEnabled="true"
+        android:elevation="1dp"
+        android:outlineAmbientShadowColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TipoPercorsoHeader">
+
+        <Button
+            android:id="@+id/PercorsoBreveBtn"
+            style="@style/TipoPerocorsoBtn"
+            android:layout_width="146dp"
+            android:layout_height="61dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="230dp"
+            android:onClick="switchToListaZone"
+            android:text="@string/PercorsoBreve" />
+
+        <Button
+            android:id="@+id/PercorsoMedioBtn"
+            style="@style/TipoPerocorsoBtn"
+            android:layout_width="146dp"
+            android:layout_height="61dp"
+            android:layout_marginVertical="100dp"
+            android:layout_marginStart="230dp"
+            android:onClick="switchToListaZone"
+            android:text="@string/PercorsoMedio" />
+
+        <Button
+            android:id="@+id/PercorsoLungoBtn"
+            style="@style/TipoPerocorsoBtn"
+            android:layout_width="146dp"
+            android:layout_height="61dp"
+            android:layout_marginVertical="200dp"
+            android:layout_marginStart="230dp"
+            android:onClick="switchToListaZone"
+            android:text="@string/PercorsoLungo" />
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
