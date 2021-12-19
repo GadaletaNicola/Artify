@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Artify">
         <activity
+            android:name=".login"
+            android:exported="true" />
+        <activity
+            android:name=".sign_up"
+            android:exported="true" />
+        <activity
             android:name=".ListaOpere"
             android:exported="true" />
         <activity

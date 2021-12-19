@@ -1,5 +1,18 @@
 <resources>
 
+    <!-- Stringhe Activity Login e registrazione  -->
+    <string name="login_text">Accedi ad Artify</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login_button">Accedi</string>
+    <string name="reg_text">Registrati ad Artify</string>
+    <string name="name">Nome</string>
+    <string name="surname">Cognome</string>
+    <string name="email">Email</string>
+    <string name="signup_button">Registrati</string>
+    <string name="not_accounted">Non hai ancora un account? Registrati!</string>
+    <string name="accounted">Hai già un account? Accedi!</string>
+
     <!-- Stringhe Activity lista_zone/listadapter  -->
     <string name="app_name">Artify</string>
     <string name="ZoneMuseoHeader">Zone Museo</string>
@@ -17,8 +30,16 @@
 
     <!-- Errori -->
     <string name="ReadDbError">Errore! Impossibile leggere dal Database</string>
+    <string name="error_name">Nome errato</string>
+    <string name="error_surname">Cognome errato</string>
+    <string name="error_email">Email errata</string>
+    <string name="error_username">Username errato</string>
+    <string name="error_password">Password errata</string>
+    <string name="error_signUp">Registrazione non andata a buon fine!</string>
 
     <!-- Descrizioni -->
     <string name="DescrizioneLogoZone">Immagine identificativa delle zone</string>
     <string name="DescrizioneLogoOpera">Immagine identificativa delle opere</string>
+
+
 </resources>
