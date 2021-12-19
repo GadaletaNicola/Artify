@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/dashboard_menu"
+            android:checked="false"
+            android:icon="@drawable/ic_dashboard"
+            android:title="@string/dashboard" />
+
+        <item
+            android:id="@+id/path_menu"
+            android:checked="false"
+            android:icon="@drawable/ic_museum_path"
+            android:title="@string/path" />
+
+        <item
+            android:id="@+id/settings_menu"
+            android:checked="false"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings" />
+
+    </group>
+</menu>

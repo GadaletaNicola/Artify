@@ -6,8 +6,16 @@
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable-mdpi/ic_launcher_background.xml" value="0.14444444444444443" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable-mdpi/signup_button_style.xml" value="0.246875" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26614583333333336" />
+        <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable/dashboard_bg.xml" value="0.1" />
+        <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable/dashboard_bottom_bg.xml" value="0.1" />
+        <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable/edit_profile_ic.xml" value="0.1" />
+        <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable/edit_user_img_ic.xml" value="0.1" />
+        <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable/ic_dashboard.xml" value="0.1" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26614583333333336" />
+        <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable/ic_museum_path.xml" value="0.1" />
+        <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable/ic_settings.xml" value="0.1" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable/login_button_style.xml" value="0.26614583333333336" />
+        <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable/rounded_corners.xml" value="0.1" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable/roundedbtn.xml" value="0.26614583333333336" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable/shape.xml" value="0.19791666666666666" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/drawable/signup_button_style.xml" value="0.26614583333333336" />
@@ -15,6 +23,7 @@
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout-land/activity_lista_percorsi.xml" value="0.18006993006993008" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout-land/activity_lista_zone.xml" value="0.1657848324514991" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout-land/activity_tipo_percorso.xml" value="0.1657848324514991" />
+        <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/activity_lista_opere.xml" value="0.1" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/activity_lista_percorsi.xml" value="0.264" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/activity_lista_zone.xml" value="0.21195652173913043" />
@@ -22,6 +31,8 @@
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/activity_main.xml" value="0.15625" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/activity_sign_up.xml" value="0.11614583333333334" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/activity_tipo_percorso.xml" value="0.21195652173913043" />
+        <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/drawer_menu.xml" value="0.22447916666666667" />
+        <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/drawer_top.xml" value="0.1" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/listaZoneadapeter.xml" value="0.12708333333333333" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/lista_opere_adapter.xml" value="0.3500905797101449" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/listadapeter.xml" value="0.264" />
@@ -29,6 +40,7 @@
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/listazoneadapeter.xml" value="0.21105072463768115" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/login.xml" value="0.1793478260869565" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/layout/sign_up.xml" value="0.1793478260869565" />
+        <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/menu/drawer_menu.xml" value="0.22447916666666667" />
         <entry key="..\:/Nicol/progetti/NEW/Progetti/Programmazione/ANDROIDAPP/Artify/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/Panun/Desktop/Artify/app/src/main/res/drawable/login_button_style.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/Panun/Desktop/Artify/app/src/main/res/drawable/reg_button_style.xml" value="0.17743055555555556" />

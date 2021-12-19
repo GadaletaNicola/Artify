@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Artify">
         <activity
+            android:name=".dashboard"
+            android:exported="true" />
+        <activity
             android:name=".login"
             android:exported="true" />
         <activity

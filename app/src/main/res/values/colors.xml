@@ -12,4 +12,5 @@
     <color name="VeryLightBlue">#E2F7FF</color>
     <color name="background_login">#CBEBF7</color>
     <color name="background_signup">#CBEBF7</color>
+    <color name="colorPrimaryDark">#32374b</color>
 </resources>

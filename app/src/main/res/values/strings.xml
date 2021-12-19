@@ -1,5 +1,6 @@
 <resources>
 
+
     <!-- Stringhe Activity Login e registrazione  -->
     <string name="login_text">Accedi ad Artify</string>
     <string name="username">Username</string>
@@ -12,6 +13,20 @@
     <string name="signup_button">Registrati</string>
     <string name="not_accounted">Non hai ancora un account? Registrati!</string>
     <string name="accounted">Hai già un account? Accedi!</string>
+
+    <!-- Stringhe Activity Dashboard  -->
+    <string name="dashboard">Dashboard</string>
+    <string name="welcome">Benvenuto, </string>
+    <string name="user">User</string>
+    <string name="mailIns"><b>generic.mail@outlook.it</b></string>
+    <string name="mail">E-mail:</string>
+    <string name="dashboardName">Nome:</string>
+    <string name="nameIns"><b>generic name</b></string>
+    <string name="points">I tuoi punti:</string>
+    <string name="pointsReached"><b>1200</b></string>
+    <string name="badges">Badges:</string>
+    <string name="path">Percorso</string>
+    <string name="settings">Impostazioni</string>
 
     <!-- Stringhe Activity lista_zone/listadapter  -->
     <string name="app_name">Artify</string>
@@ -40,6 +55,9 @@
     <!-- Descrizioni -->
     <string name="DescrizioneLogoZone">Immagine identificativa delle zone</string>
     <string name="DescrizioneLogoOpera">Immagine identificativa delle opere</string>
-
+    <string name="DescrizioneDrawer_top_iw">Immagine Utene Loggato</string>
+    <string name="DescrizioneImageView_user">Immagine Utene Loggato</string>
+    <string name="DescrizioneImageButton">Bottone per la modifica dell immagine</string>
+    <string name="DescrizioneDash_badge">Immagine badge</string>
 
 </resources>
