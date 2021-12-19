@@ -58,7 +58,7 @@ public class login extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(login.this, "Accesso effettuato!", Toast.LENGTH_LONG).show();
-                        // to do 
+                        // to do
                     } else {
                         Toast.makeText(login.this, "Accesso non andato a buon fine!", Toast.LENGTH_LONG).show();
                     }

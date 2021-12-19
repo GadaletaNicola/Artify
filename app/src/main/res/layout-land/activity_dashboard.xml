@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dashboard_bg"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:openDrawer="left"
+    tools:context=".dashboard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dashboard_bg"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/dashboard_bg"
+            android:elevation="5dp"
+            android:padding="5dp"
+            >
+
+            <TextView
+                android:id="@+id/dashboard_tw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:text="@string/dashboard"
+                android:textColor="#fefefe"
+                android:textSize="23sp"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/welcome_tw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dashboard_tw"
+                android:text="@string/welcome"
+                android:textSize="15sp"
+                android:layout_alignStart="@+id/dashboard_tw"
+                android:textColor="#fefefe"
+                android:paddingTop="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user"
+                android:layout_toEndOf="@+id/welcome_tw"
+                android:layout_alignBottom="@id/welcome_tw"
+                android:textSize="15sp"
+                android:textColor="#fefefe"
+                />
+
+            <ImageView
+                android:id="@+id/imageView_user"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="25dp"
+                android:src="@drawable/programmer"
+                android:contentDescription="@string/DescrizioneImageView_user" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/imageView_user"
+                android:layout_alignBottom="@id/imageView_user"
+                android:layout_marginEnd="-20dp"
+                android:layout_marginBottom="-6dp"
+                android:background="@drawable/rounded_corners"
+                android:elevation="5dp"
+                android:contentDescription="@string/DescrizioneImageButton"
+                app:srcCompat="@drawable/edit_user_img_ic"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="25dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:background="@drawable/dashboard_bottom_bg"
+            android:layout_weight="10">
+
+            <TextView
+                android:id="@+id/dash_mail_tw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mail"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/dash_mailIns_tw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/mailIns"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/dash_name_tw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/dash_nameIns_tw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/nameIns"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/dash_points_tw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/points"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/dash_pointsReached_tw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/pointsReached"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginBottom="10dp"/>
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="25dp"
+            android:background="@drawable/dashboard_bottom_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="25dp"
+                android:background="@drawable/dashboard_bottom_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dash_badges_tw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/badges"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/dash_badge_2_iw"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:contentDescription="@string/DescrizioneDash_badge"
+                    app:srcCompat="@drawable/img_placeholder" />
+
+                <ImageView
+                    android:id="@+id/dash_badge_3_iw"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="25dp"
+                    android:contentDescription="@string/DescrizioneDash_badge"
+                    app:srcCompat="@drawable/img_placeholder" />
+
+                <ImageView
+                    android:id="@+id/dash_badge_1_iw"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:contentDescription="@string/DescrizioneDash_badge"
+                    app:srcCompat="@drawable/img_placeholder" />
+
+                <ImageView
+                    android:id="@+id/dash_badge_4_iw"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="25dp"
+                    android:backgroundTint="@color/black"
+                    android:contentDescription="@string/DescrizioneDash_badge"
+                    app:srcCompat="@drawable/coming_soon" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/side_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:elevation="4dp"
+        app:headerLayout="@layout/drawer_top"
+        app:menu="@menu/drawer_menu"
+        android:background="#cbebf7"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
