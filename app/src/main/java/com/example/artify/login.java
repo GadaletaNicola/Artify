@@ -63,6 +63,7 @@ public class login extends AppCompatActivity {
                         Toast.makeText(login.this, "Accesso non andato a buon fine!", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(login.this, dashboard.class);
                         startActivity(intent);
+
                     }
                 }
             });
