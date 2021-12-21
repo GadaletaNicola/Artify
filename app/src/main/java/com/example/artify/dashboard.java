@@ -1,5 +1,6 @@
 package com.example.artify;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -9,17 +10,25 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+private DrawerLayout drawerLayout;
 
-    private DrawerLayout drawerLayout;
+
+
+public class dashboard extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         setNavigationViewListener();
     }
