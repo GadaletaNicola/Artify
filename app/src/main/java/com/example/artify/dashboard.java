@@ -17,42 +17,36 @@ import android.os.Bundle;
 import com.google.android.material.navigation.NavigationView;
 
 public class dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-private DrawerLayout drawerLayout;
+    private DrawerLayout drawerLayout;
 
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_dashboard);
 
-
-public class dashboard extends AppCompatActivity {
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
-
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        setNavigationViewListener();
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Intent i;
-
-
-
-        switch (item.getItemId()) {
-
-            case R.id.path_menu: {
-                i = new Intent(this, tipo_percorso.class);
-                startActivity(i);
-                drawerLayout.closeDrawer(GravityCompat.START);
-                return true;
-            }
+            drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+            setNavigationViewListener();
         }
-        return true;
-    }
 
-    private void setNavigationViewListener() {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.side_menu);
-        navigationView.setNavigationItemSelectedListener(this);
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Intent i;
+
+
+            switch (item.getItemId()) {
+
+                case R.id.path_menu: {
+                    i = new Intent(this, tipo_percorso.class);
+                    startActivity(i);
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+            }
+            return true;
+        }
+
+        private void setNavigationViewListener() {
+            NavigationView navigationView = (NavigationView) findViewById(R.id.side_menu);
+            navigationView.setNavigationItemSelectedListener(this);
+        }
     }
-}

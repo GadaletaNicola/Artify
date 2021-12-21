@@ -39,6 +39,8 @@ public class login extends AppCompatActivity {
 
         if (user != null) {
             // to do
+            Intent i = new Intent( this, dashboard.class);
+            startActivity(i);
         }
     }
 
