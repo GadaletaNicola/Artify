@@ -7,5 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="DarkLightBlue">#51C1E9</color>
+    <color name="LightBlue">#CBEBF7</color>
+    <color name="VeryLightBlue">#E2F7FF</color>
+    <color name="background_login">#CBEBF7</color>
+    <color name="background_signup">#CBEBF7</color>
     <color name="colorPrimaryDark">#32374b</color>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.artify;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,10 +11,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Intent i = new Intent(this,DashboardActivity.class);
+        Intent i = new Intent(this, dashboard.class);
         startActivity(i);
     }
-
-
 }
