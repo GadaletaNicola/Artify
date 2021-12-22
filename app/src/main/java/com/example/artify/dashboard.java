@@ -13,25 +13,35 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 private DrawerLayout drawerLayout;
 
-
-
-public class dashboard extends AppCompatActivity {
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
-
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        setNavigationViewListener();
-    }
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_dashboard);
+            //Handle click in drawer menu
+            drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+            setNavigationViewListener();
+            //Handle click on logout
+            RelativeLayout rl = (RelativeLayout)findViewById(R.id.logout_layout);
+            rl.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    FirebaseAuth.getInstance().signOut();
+                    Toast.makeText(dashboard.this, "Disconnesso!", Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(dashboard.this, login.class);
+                    startActivity(i);
+                }
+            });
+        }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

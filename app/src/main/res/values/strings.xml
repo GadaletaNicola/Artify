@@ -27,6 +27,7 @@
     <string name="badges">Badges:</string>
     <string name="path">Percorso</string>
     <string name="settings">Impostazioni</string>
+    <string name="log_out">Log out</string>
 
     <!-- Stringhe Activity lista_zone/listadapter  -->
     <string name="app_name">Artify</string>
@@ -59,5 +60,6 @@
     <string name="DescrizioneImageView_user">Immagine Utene Loggato</string>
     <string name="DescrizioneImageButton">Bottone per la modifica dell immagine</string>
     <string name="DescrizioneDash_badge">Immagine badge</string>
+
 
 </resources>

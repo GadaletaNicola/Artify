@@ -8,7 +8,7 @@
     android:background="@drawable/dashboard_bg"
     android:orientation="vertical"
     android:weightSum="10"
-    tools:context=".dashboard">
+    tools:openDrawer="start">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -173,8 +173,8 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="25dp"
-                app:srcCompat="@drawable/img_placeholder"
-                android:contentDescription="@string/DescrizioneDash_badge" />
+                android:contentDescription="@string/DescrizioneDash_badge"
+                app:srcCompat="@drawable/img_placeholder" />
 
             <ImageView
                 android:id="@+id/dash_badge_2_iw"
@@ -194,8 +194,8 @@
                 android:layout_below="@+id/dash_badges_tw"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="25dp"
-                app:srcCompat="@drawable/img_placeholder"
-                android:contentDescription="@string/DescrizioneDash_badge" />
+                android:contentDescription="@string/DescrizioneDash_badge"
+                app:srcCompat="@drawable/img_placeholder" />
 
             <ImageView
                 android:id="@+id/dash_badge_4_iw"
@@ -220,6 +220,38 @@
         android:elevation="1dp"
         app:headerLayout="@layout/drawer_top"
         app:menu="@menu/drawer_menu"
-        android:background="#cbebf7"/>
+        android:background="#cbebf7">
+
+        <RelativeLayout
+            android:id="@+id/logout_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:padding="16dp"
+            >
+
+            <TextView
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/logout_iw"
+                android:text="@string/log_out"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginLeft="15dp"
+                />
+            <ImageView
+                android:id="@+id/logout_iw"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@string/DescrizioneDash_badge"
+                app:srcCompat="@drawable/logout" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
