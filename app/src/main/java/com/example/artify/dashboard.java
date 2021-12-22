@@ -39,6 +39,7 @@ private DrawerLayout drawerLayout;
                     Toast.makeText(dashboard.this, "Disconnesso!", Toast.LENGTH_LONG).show();
                     Intent i = new Intent(dashboard.this, login.class);
                     startActivity(i);
+                    finish();
                 }
             });
         }
