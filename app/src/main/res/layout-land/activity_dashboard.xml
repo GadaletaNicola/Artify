@@ -67,8 +67,8 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="25dp"
-                android:src="@drawable/programmer"
-                android:contentDescription="@string/DescrizioneImageView_user" />
+                android:contentDescription="@string/DescrizioneImageView_user"
+                android:src="@drawable/programmer" />
 
             <ImageButton
                 android:id="@+id/imageButton"
@@ -229,6 +229,37 @@
         android:elevation="4dp"
         app:headerLayout="@layout/drawer_top"
         app:menu="@menu/drawer_menu"
-        android:background="#cbebf7"/>
+        android:background="#cbebf7">
+        <RelativeLayout
+            android:id="@+id/logout_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:padding="16dp"
+            >
+
+            <TextView
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/logout_iw"
+                android:text="@string/log_out"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginStart="15dp"
+                />
+            <ImageView
+                android:id="@+id/logout_iw"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@string/DescrizioneDash_badge"
+                app:srcCompat="@drawable/logout" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

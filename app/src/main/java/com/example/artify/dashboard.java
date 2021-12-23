@@ -42,6 +42,7 @@ private DrawerLayout drawerLayout;
                     finish();
                 }
             });
+
         }
 
     @Override
