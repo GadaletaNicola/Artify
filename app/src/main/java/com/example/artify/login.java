@@ -25,10 +25,12 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        email=findViewById(R.id.email);
-        password=findViewById(R.id.password);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
 
         mAuth = FirebaseAuth.getInstance();
+
+
     }
 
     @Override
@@ -73,7 +75,7 @@ public class login extends AppCompatActivity {
         }
     }
 
-    public void switchToSignUp(View view){
+    public void switchToSignUp(View view) {
         Intent intent = new Intent(this, sign_up.class);
         startActivity(intent);
     }

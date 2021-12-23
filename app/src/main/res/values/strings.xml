@@ -16,14 +16,14 @@
 
     <!-- Stringhe Activity Dashboard  -->
     <string name="dashboard">Dashboard</string>
-    <string name="welcome">Benvenuto, </string>
-    <string name="user">User</string>
-    <string name="mailIns"><b>generic.mail@outlook.it</b></string>
+    <string name="welcome">Benvenuto,</string>
+    <string name="user"></string>
+    <string name="mailIns"><b></b></string>
     <string name="mail">E-mail:</string>
     <string name="dashboardName">Nome:</string>
-    <string name="nameIns"><b>generic name</b></string>
+    <string name="nameIns"><b></b></string>
     <string name="points">I tuoi punti:</string>
-    <string name="pointsReached"><b>1200</b></string>
+    <string name="pointsReached"></string>
     <string name="badges">Badges:</string>
     <string name="path">Percorso</string>
     <string name="settings">Impostazioni</string>

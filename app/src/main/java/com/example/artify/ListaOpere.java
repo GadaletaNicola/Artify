@@ -36,18 +36,18 @@ public class ListaOpere extends AppCompatActivity {
         routesPath.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                initRv(snapshot,contextIntent);
+                initRv(snapshot, contextIntent);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getApplicationContext(),R.string.ReadDbError,Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.ReadDbError, Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    private void initRv(DataSnapshot snapshot,Intent contextIntent){
-        int i=0;
+    private void initRv(DataSnapshot snapshot, Intent contextIntent) {
+        int i = 0;
         for (DataSnapshot sn : snapshot.getChildren()) {
             Opera opera = new Opera();
 
@@ -69,14 +69,14 @@ public class ListaOpere extends AppCompatActivity {
             String urlImg = sn.getValue(Opera.class).getImg();
             opera.setImg(urlImg);
 
-            if(zona.equals(contextIntent.getStringExtra("ZonaCliccata"))){
-                com.example.artify.ListaOpere.this.opere.add(i,opera);
+            if (zona.equals(contextIntent.getStringExtra("ZonaCliccata"))) {
+                com.example.artify.ListaOpere.this.opere.add(i, opera);
             }
 
             i++;
         }
 
-        lista_opere_adapter adapter = new lista_opere_adapter(opere, getApplicationContext(),contextIntent);
+        lista_opere_adapter adapter = new lista_opere_adapter(opere, getApplicationContext(), contextIntent);
         ListaOpere.setAdapter(adapter);
         ListaOpere.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
     }
