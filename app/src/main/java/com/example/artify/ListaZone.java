@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -61,6 +62,8 @@ public class ListaZone extends AppCompatActivity{
             String urlImg = sn.getValue(Zone.class).getImg();
             zone.setImg(urlImg);
 
+            String tipoPercorso = sn.getValue(Zone.class).getTipo();
+            zone.setTipo(tipoPercorso);
 
             com.example.artify.ListaZone.this.zone.add(i, zone);
             i++;
@@ -77,4 +80,8 @@ public class ListaZone extends AppCompatActivity{
         zone = new ArrayList<>();
     }
 
+
+    public void listaZoneSwitchToHome(View view){
+        //to do
+    }
 }

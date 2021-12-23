@@ -20,8 +20,15 @@ public class tipo_percorso extends AppCompatActivity {
 
     public void switchToListaZone(View view){
         btnClicked = findViewById(view.getId());
+        Intent contextIntent = getIntent();
 
-        Intent switcher = new Intent(this,ListaZone.class).putExtra("TipoPercorso", btnClicked.getText().toString());
+        Intent switcher = new Intent(this,ListaZone.class);
+        switcher.putExtra("TipoPercorso", btnClicked.getText().toString());
+        switcher.putExtra("preMenuScelta",contextIntent.getStringExtra("preMenuScelta"));
         startActivity(switcher);
+    }
+
+    public void tipoPercorsoSwitchToHome(View view){
+        //to do
     }
 }

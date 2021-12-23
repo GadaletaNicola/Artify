@@ -68,6 +68,7 @@ public class listadapter extends RecyclerView.Adapter<listadapter.ListAdapterHol
             Intent switcher  = new Intent(context,ListaOpere.class);
             switcher.putExtra("TipoPercorso", contextIntent.getStringExtra("TipoPercorso"));
             switcher.putExtra("ZonaCliccata",zone.get(position).getNomeZona());
+            switcher.putExtra("preMenuScelta",contextIntent.getStringExtra("preMenuScelta"));
             context.startActivity(switcher);
         });
 

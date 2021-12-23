@@ -3,13 +3,13 @@ package com.example.artify;
 public class Zone {
     private String nomeZona="";
     private String img = "";
+    private String tipo ="";
 
-    public Zone(){
+    public Zone(){}
 
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
-
-
-
     public void setImg(String img) {
         this.img = img;
     }
@@ -18,6 +18,10 @@ public class Zone {
         this.nomeZona = nomeZona;
     }
 
+
+    public String getTipo() {
+        return tipo;
+    }
 
     public String getImg() {
         return img;

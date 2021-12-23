@@ -36,7 +36,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
             switch (item.getItemId()) {
 
                 case R.id.path_menu: {
-                    i = new Intent(this, tipo_percorso.class);
+                    i = new Intent(this, MenuPreScelta.class);
                     startActivity(i);
                     drawerLayout.closeDrawer(GravityCompat.START);
                     return true;

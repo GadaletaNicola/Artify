@@ -28,6 +28,11 @@
     <string name="path">Percorso</string>
     <string name="settings">Impostazioni</string>
 
+    <!-- Stringhe Activity MenuPreScelta -->
+    <string name="MenuPreSceltaHeader"></string>
+    <string name="CercaOpera">Cerca Opera</string>
+    <string name="InizaPercorso">Inizia Percoso</string>
+
     <!-- Stringhe Activity lista_zone/listadapter  -->
     <string name="app_name">Artify</string>
     <string name="ZoneMuseoHeader">Zone Museo</string>

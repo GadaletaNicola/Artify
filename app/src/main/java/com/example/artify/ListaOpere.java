@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -71,6 +72,8 @@ public class ListaOpere extends AppCompatActivity {
 
             if(zona.equals(contextIntent.getStringExtra("ZonaCliccata"))){
                 com.example.artify.ListaOpere.this.opere.add(i,opera);
+            }else if(contextIntent.getStringExtra("preMenuScelta").isEmpty()){
+                com.example.artify.ListaOpere.this.opere.add(i,opera);
             }
 
             i++;
@@ -86,5 +89,9 @@ public class ListaOpere extends AppCompatActivity {
         super.onStart();
         opere = new ArrayList<>();
 
+    }
+
+    public void listaOpereSwitchToHome(View view){
+        //to do
     }
 }
