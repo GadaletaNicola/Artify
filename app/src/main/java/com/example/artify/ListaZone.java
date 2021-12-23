@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -65,7 +66,13 @@ public class ListaZone extends AppCompatActivity{
             String tipoPercorso = sn.getValue(Zone.class).getTipo();
             zone.setTipo(tipoPercorso);
 
-            com.example.artify.ListaZone.this.zone.add(i, zone);
+            String nomeMuseo = sn.getValue(Zone.class).getMuseo();
+            zone.setMuseo(nomeMuseo);
+
+            if(tipoPercorso.equals(contextIntent.getStringExtra("TipoPercorso"))){
+                com.example.artify.ListaZone.this.zone.add(i, zone);
+            }
+
             i++;
         }
 
