@@ -101,6 +101,8 @@ public class ListaOpere extends AppCompatActivity {
     }
 
     public void listaOpereSwitchToHome(View view){
-        //to do
+        Intent switcher = new Intent(this,HomePage.class);
+        startActivity(switcher);
+        finish();
     }
 }

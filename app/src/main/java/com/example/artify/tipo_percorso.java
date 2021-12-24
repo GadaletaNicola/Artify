@@ -30,6 +30,8 @@ public class tipo_percorso extends AppCompatActivity {
     }
 
     public void tipoPercorsoSwitchToHome(View view){
-        //to do
+        Intent switcher = new Intent(this,HomePage.class);
+        startActivity(switcher);
+        finish();
     }
 }

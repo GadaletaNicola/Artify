@@ -35,6 +35,8 @@ public class MenuPreScelta extends AppCompatActivity {
     }
 
     public void MenuPreSceltaToHome(View view){
-        //to do
+        Intent switcher = new Intent(this,HomePage.class);
+        startActivity(switcher);
+        finish();
     }
 }

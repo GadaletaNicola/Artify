@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawerLayout"
-    tools:context=".HomePage">
+    tools:context=".HomePage"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,7 +19,7 @@
 
         <LinearLayout
             android:id="@+id/HeadBanner"
-            android:layout_width="match_parent"
+            android:layout_width="476dp"
             android:layout_height="80dp"
             android:background="@color/DarkLightBlue"
             android:orientation="vertical"
@@ -41,16 +42,16 @@
         </LinearLayout>
 
         <FrameLayout
-            android:layout_width="308dp"
-            android:layout_height="474dp"
+            android:layout_width="474dp"
+            android:layout_height="308dp"
             android:background="@color/DarkLightBlue"
+            android:elevation="1dp"
+            android:outlineSpotShadowColor="@color/black"
+            android:outlineAmbientShadowColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/HeadBanner"
-            android:elevation="1dp"
-            android:outlineSpotShadowColor="@color/black"
-            android:outlineAmbientShadowColor="@color/black">
+            app:layout_constraintTop_toBottomOf="@+id/HeadBanner">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ListaMusei"

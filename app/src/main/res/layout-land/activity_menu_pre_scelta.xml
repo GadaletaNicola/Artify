@@ -9,16 +9,17 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/MenuPreSceltaHeader"
-        android:layout_width="412dp"
-        android:layout_height="74dp"
-        android:orientation="vertical"
-        android:elevation="1dp"
-        android:outlineAmbientShadowColor="@color/black"
-        android:defaultFocusHighlightEnabled="true"
+        android:layout_width="462dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
         android:background="@color/DarkLightBlue"
+        android:defaultFocusHighlightEnabled="true"
+        android:elevation="1dp"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -42,52 +43,51 @@
             android:id="@+id/imageView2"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:background="?android:selectableItemBackground"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView"
             app:layout_constraintHorizontal_bias="0.432"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.483"
-            app:srcCompat="@drawable/ic_baseline_home"
-            android:background="?android:selectableItemBackground"
-            android:onClick="MenuPreSceltaToHome"
-            />
+            app:srcCompat="@drawable/ic_baseline_home" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:id="@+id/ButtonContainer"
-        android:layout_width="345dp"
-        android:layout_height="454dp"
+        android:layout_width="462dp"
+        android:layout_height="303dp"
         android:background="@color/DarkLightBlue"
         android:defaultFocusHighlightEnabled="true"
         android:elevation="1dp"
         android:outlineAmbientShadowColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.623">
+        app:layout_constraintVertical_bias="0.904">
 
         <Button
             android:id="@+id/CercaOperaBtn"
             style="@style/TipoPerocorsoBtn"
             android:layout_width="146dp"
+
             android:layout_height="61dp"
-            android:layout_marginVertical="100dp"
-            android:layout_marginStart="100dp"
-            android:text="@string/CercaOpera"
-            android:onClick="switchToListaOpere"/>
+            android:layout_marginVertical="50dp"
+            android:layout_marginStart="150dp"
+            android:onClick="switchToListaOpere"
+            android:text="@string/CercaOpera" />
 
         <Button
             android:id="@+id/InizaPercorsoBtn"
             style="@style/TipoPerocorsoBtn"
             android:layout_width="146dp"
             android:layout_height="61dp"
-            android:layout_marginVertical="290dp"
-            android:layout_marginStart="100dp"
-            android:text="@string/InizaPercorso"
-            android:onClick="switchToTipoPercorso"/>
+            android:layout_marginVertical="190dp"
+            android:layout_marginStart="150dp"
+            android:onClick="switchToTipoPercorso"
+            android:text="@string/InizaPercorso" />
 
     </FrameLayout>
 
