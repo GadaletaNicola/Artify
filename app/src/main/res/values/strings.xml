@@ -14,6 +14,12 @@
     <string name="not_accounted">Non hai ancora un account? Registrati!</string>
     <string name="accounted">Hai già un account? Accedi!</string>
 
+    <!-- Stringhe Activity listamuseiadapter -->
+    <string name="MuseoDefalut">Museo Base</string>
+
+    <!-- Stringhe Activity HomePage -->
+    <string name="HomePageHeader">Home Page</string>
+
     <!-- Stringhe Activity Dashboard  -->
     <string name="dashboard">Dashboard</string>
     <string name="welcome">Benvenuto, </string>

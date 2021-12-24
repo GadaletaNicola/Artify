@@ -23,6 +23,7 @@ public class tipo_percorso extends AppCompatActivity {
         Intent contextIntent = getIntent();
 
         Intent switcher = new Intent(this,ListaZone.class);
+        switcher.putExtra("MuseoCliccato",contextIntent.getStringExtra("MuseoCliccato"));
         switcher.putExtra("TipoPercorso", btnClicked.getText());
         switcher.putExtra("preMenuScelta",contextIntent.getStringExtra("preMenuScelta"));
         startActivity(switcher);

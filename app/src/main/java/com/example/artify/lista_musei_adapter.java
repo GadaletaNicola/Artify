@@ -20,38 +20,36 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-
 import java.util.ArrayList;
 
-public class listadapter extends RecyclerView.Adapter<listadapter.ListAdapterHolder> {
-    private final ArrayList<Zone> zone;
-    private final Context context;
-    private final Intent contextIntent;
+public class lista_musei_adapter extends RecyclerView.Adapter<lista_musei_adapter.ListAdapterHolder> {
+    private ArrayList<Museo> musei;
+    private Context context;
 
 
-    public listadapter(@NonNull ArrayList<Zone> zone, Context context,Intent contextIntent){
-            this.zone = zone;
-            this.context = context;
-            this.contextIntent = contextIntent;
+
+    public lista_musei_adapter(ArrayList<Museo>musei,Context context){
+        this.musei = musei;
+        this.context = context;
     }
 
 
     @NonNull
     @Override
     public ListAdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ListAdapterHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.listadapeter,parent,false));
+        return new ListAdapterHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.listamuseiadapter,parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ListAdapterHolder holder, int position) {
-        StorageReference gsRef = FirebaseStorage.getInstance().getReferenceFromUrl(zone.get(position).getImg());
+        StorageReference gsRef = FirebaseStorage.getInstance().getReferenceFromUrl(musei.get(position).getImg());
 
 
         gsRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
 
             @Override
             public void onSuccess(Uri uri) {
-                Glide.with(context).load(uri.toString()).into(holder.immagineZona);
+                Glide.with(context).load(uri.toString()).into(holder.logoMuseo);
 
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -62,14 +60,11 @@ public class listadapter extends RecyclerView.Adapter<listadapter.ListAdapterHol
             }
         });
 
-        holder.nomeZona.setText(zone.get(position).getNomeZona());
+        holder.nomeMuseo.setText(musei.get(position).getNome());
 
         holder.parentLayout.setOnClickListener(view -> {
-            Intent switcher  = new Intent(context,ListaOpere.class);
-            switcher.putExtra("MuseoCliccato",contextIntent.getStringExtra("MuseoCliccato"));
-            switcher.putExtra("TipoPercorso", contextIntent.getStringExtra("TipoPercorso"));
-            switcher.putExtra("ZonaCliccata",zone.get(position).getNomeZona());
-            switcher.putExtra("preMenuScelta",contextIntent.getStringExtra("preMenuScelta"));
+            Intent switcher  = new Intent(context,MenuPreScelta.class);
+            switcher.putExtra("MuseoCliccato",musei.get(position).getNome());
             context.startActivity(switcher);
         });
 
@@ -77,24 +72,19 @@ public class listadapter extends RecyclerView.Adapter<listadapter.ListAdapterHol
 
     @Override
     public int getItemCount() {
-        return zone.size();
+        return musei.size();
     }
 
-
     static class ListAdapterHolder extends RecyclerView.ViewHolder{
-        private final TextView nomeZona;
-        private final ImageView immagineZona;
-        private final ConstraintLayout parentLayout;
+        private TextView nomeMuseo;
+        private ImageView logoMuseo;
+        private ConstraintLayout parentLayout;
 
         public ListAdapterHolder(@NonNull View itemView) {
             super(itemView);
-            nomeZona = itemView.findViewById(R.id.NomeZona);
-            immagineZona = itemView.findViewById(R.id.LogoZona);
-            parentLayout = itemView.findViewById(R.id.CardZona);
-
+            nomeMuseo = itemView.findViewById(R.id.NomeMuseo);
+            logoMuseo = itemView.findViewById(R.id.LogoMuseo);
+            parentLayout = itemView.findViewById(R.id.CardMuseo);
         }
-
-
     }
-
 }

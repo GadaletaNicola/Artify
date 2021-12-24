@@ -7,9 +7,13 @@ public class Opera {
     private String zona = "";
     private String descrizione = "";
     private int voto = 0;
+    private String museo = "";
 
     public Opera(){}
 
+    public void setMuseo(String museo) {
+        this.museo = museo;
+    }
 
     public void setImg(String img) {
         this.img = img;
@@ -60,5 +64,9 @@ public class Opera {
 
     public String getTitolo() {
         return titolo;
+    }
+
+    public String getMuseo() {
+        return museo;
     }
 }

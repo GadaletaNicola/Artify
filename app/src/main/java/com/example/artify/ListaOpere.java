@@ -48,7 +48,7 @@ public class ListaOpere extends AppCompatActivity {
     }
 
     private void initRv(DataSnapshot snapshot,Intent contextIntent){
-        int i=0;
+
         for (DataSnapshot sn : snapshot.getChildren()) {
             Opera opera = new Opera();
 
@@ -70,13 +70,22 @@ public class ListaOpere extends AppCompatActivity {
             String urlImg = sn.getValue(Opera.class).getImg();
             opera.setImg(urlImg);
 
-            if(zona.equals(contextIntent.getStringExtra("ZonaCliccata"))){
-                com.example.artify.ListaOpere.this.opere.add(i,opera);
-            }else if(contextIntent.getStringExtra("preMenuScelta").isEmpty()){
-                com.example.artify.ListaOpere.this.opere.add(i,opera);
-            }
+            String nomeMuseo = sn.getValue(Opera.class).getMuseo();
+            opera.setMuseo(nomeMuseo);
 
-            i++;
+            String preMenuSceltaContext = contextIntent.getStringExtra("preMenuScelta");
+            String nomeMuseoContext = contextIntent.getStringExtra("MuseoCliccato");
+
+            if(!preMenuSceltaContext.isEmpty()){
+                String zonaCliccataContext = contextIntent.getStringExtra("ZonaCliccata");
+                if(zona.equals(zonaCliccataContext) && nomeMuseo.equals(nomeMuseoContext)) {
+                    com.example.artify.ListaOpere.this.opere.add(opera);
+                }
+            }else{
+                if(nomeMuseo.equals(nomeMuseoContext)){
+                    com.example.artify.ListaOpere.this.opere.add(opera);
+                }
+            }
         }
 
         lista_opere_adapter adapter = new lista_opere_adapter(opere, getApplicationContext(),contextIntent);

@@ -53,7 +53,8 @@ public class ListaZone extends AppCompatActivity{
     }
 
     private void initRv(DataSnapshot snapshot,Intent contextIntent){
-        int i=0;
+
+
         for (DataSnapshot sn : snapshot.getChildren()) {
             Zone zone = new Zone();
 
@@ -69,11 +70,14 @@ public class ListaZone extends AppCompatActivity{
             String nomeMuseo = sn.getValue(Zone.class).getMuseo();
             zone.setMuseo(nomeMuseo);
 
-            if(tipoPercorso.equals(contextIntent.getStringExtra("TipoPercorso"))){
-                com.example.artify.ListaZone.this.zone.add(i, zone);
+            String tipoPercorsoContext = contextIntent.getStringExtra("TipoPercorso");
+            String nomeMuseoContext = contextIntent.getStringExtra("MuseoCliccato");
+
+            if(tipoPercorso.equals(tipoPercorsoContext) && nomeMuseo.equals(nomeMuseoContext)){
+                com.example.artify.ListaZone.this.zone.add(zone);
             }
 
-            i++;
+
         }
 
         listadapter adapter = new listadapter(zone, getApplicationContext(),contextIntent);
