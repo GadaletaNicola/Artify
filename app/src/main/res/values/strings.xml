@@ -16,8 +16,9 @@
 
     <!-- Stringhe Activity Dashboard  -->
     <string name="dashboard">Dashboard</string>
+    <string name="dashboard_land">D\na\ns\nh\nb\no\na\nr\nd</string>
     <string name="welcome">Benvenuto,</string>
-    <string name="user"></string>
+    <string name="user">Guest</string>
     <string name="mailIns"><b></b></string>
     <string name="mail">E-mail:</string>
     <string name="dashboardName">Nome:</string>
@@ -25,7 +26,7 @@
     <string name="points">I tuoi punti:</string>
     <string name="pointsReached"></string>
     <string name="badges">Badges:</string>
-    <string name="path">Percorso</string>
+    <string name="path">Musei</string>
     <string name="settings">Impostazioni</string>
     <string name="log_out">Log out</string>
 
@@ -59,6 +60,7 @@
     <string name="DescrizioneDrawer_top_iw">Immagine Utene Loggato</string>
     <string name="DescrizioneImageView_user">Immagine Utene Loggato</string>
     <string name="DescrizioneImageButton">Bottone per la modifica dell immagine</string>
+    <string name="DescrizioneImageButtonHome">Bottone per tornare alla home</string>
     <string name="DescrizioneDash_badge">Immagine badge</string>
 
 

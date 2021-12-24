@@ -39,7 +39,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-
+        /*
         //Handle click in drawer menu
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         setNavigationViewListener();
@@ -55,7 +55,7 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(i);
                 finish();
             }
-        });
+        });*/
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         userId = FirebaseAuth.getInstance().getUid();
@@ -77,9 +77,6 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                     textView = (TextView) findViewById(R.id.dash_pointsReached_tw);
                     textView.setText((String) task.getResult().child("punti").getValue());
                     textView.setTypeface(null, Typeface.BOLD);
-                    textView = (TextView) findViewById(R.id.dash_userIns_tw);
-                    computedString = " " + (String) task.getResult().child("username").getValue();
-                    textView.setText(computedString);
                 }
             }
         });
