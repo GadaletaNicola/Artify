@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/logout_iw"
-                android:text="@string/log_out"
+                android:text="@string/logout"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:layout_marginStart="15dp"

@@ -55,7 +55,32 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(i);
                 finish();
             }
-        });*/
+        });
+
+        @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Intent i;
+
+
+        switch (item.getItemId()) {
+
+            case R.id.path_menu: {
+                i = new Intent(this, tipo_percorso.class);
+                startActivity(i);
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        }
+        return true;
+    }
+
+    private void setNavigationViewListener() {
+        NavigationView navigationView = (NavigationView) findViewById(R.id.side_menu);
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
+        */
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         userId = FirebaseAuth.getInstance().getUid();
@@ -84,26 +109,5 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
 
     }
 
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Intent i;
 
-
-        switch (item.getItemId()) {
-
-            case R.id.path_menu: {
-                i = new Intent(this, tipo_percorso.class);
-                startActivity(i);
-                drawerLayout.closeDrawer(GravityCompat.START);
-                return true;
-            }
-        }
-        return true;
-    }
-
-    private void setNavigationViewListener() {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.side_menu);
-        navigationView.setNavigationItemSelectedListener(this);
-    }
 }
