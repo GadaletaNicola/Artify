@@ -1,3 +1,4 @@
+
 <resources>
 
 
@@ -14,6 +15,12 @@
     <string name="not_accounted">Non hai ancora un account? Registrati!</string>
     <string name="accounted">Hai già un account? Accedi!</string>
 
+    <!-- Stringhe Activity listamuseiadapter -->
+    <string name="MuseoDefalut">Museo Base</string>
+
+    <!-- Stringhe Activity HomePage -->
+    <string name="HomePageHeader">HOME PAGE</string>
+
     <!-- Stringhe Activity Dashboard  -->
     <string name="dashboard">Dashboard</string>
     <string name="dashboard_land">D\na\ns\nh\nb\no\na\nr\nd</string>
@@ -28,19 +35,25 @@
     <string name="badges">Badges:</string>
     <string name="path">Musei</string>
     <string name="settings">Impostazioni</string>
-    <string name="log_out">Log out</string>
+    <string name="logout">Logout</string>
+    <string name="login">Login</string>
+
+    <!-- Stringhe Activity MenuPreScelta -->
+    <string name="MenuPreSceltaHeader"></string>
+    <string name="CercaOpera">Cerca Opera</string>
+    <string name="InizaPercorso">Inizia Percoso</string>
 
     <!-- Stringhe Activity lista_zone/listadapter  -->
     <string name="app_name">Artify</string>
-    <string name="ZoneMuseoHeader">Zone Museo</string>
+    <string name="ZoneMuseoHeader">ZONE MUSEO</string>
     <string name="TestoListAdapterDefault">Zona Base</string>
 
     <!-- Stringhe Activity lista_opere/listaOpereAdapter  -->
-    <string name="OpereMuseoHeader">Opere Museo</string>
+    <string name="OpereMuseoHeader">OPERE MUSEO</string>
     <string name="TestoListaOpereAdapterDefault">Opera Base</string>
 
     <!-- Stringhe Activity tipo percorso  -->
-    <string name="TipoPercorsiHeader">Tipo Percorsi</string>
+    <string name="TipoPercorsiHeader">TIPO PERCORSI</string>
     <string name="PercorsoBreve">Breve</string>
     <string name="PercorsoMedio">Medio</string>
     <string name="PercorsoLungo">Lungo</string>
@@ -60,8 +73,8 @@
     <string name="DescrizioneDrawer_top_iw">Immagine Utene Loggato</string>
     <string name="DescrizioneImageView_user">Immagine Utene Loggato</string>
     <string name="DescrizioneImageButton">Bottone per la modifica dell immagine</string>
-    <string name="DescrizioneImageButtonHome">Bottone per tornare alla home</string>
     <string name="DescrizioneDash_badge">Immagine badge</string>
-
+    <string name="DescrizioneHomePageBtn">Bottone per tornare alla homepage</string>
+    <string name="DescrizioneImageButtonHome">Bottone per tornare alla home</string>
 
 </resources>

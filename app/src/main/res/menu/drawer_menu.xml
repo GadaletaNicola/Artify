@@ -11,8 +11,8 @@
         <item
             android:id="@+id/path_menu"
             android:checked="false"
-            android:icon="@drawable/ic_museum_path"
-            android:title="@string/path" />
+            android:icon="@drawable/ic_login"
+            android:title="@string/login" />
 
         <item
             android:id="@+id/settings_menu"
