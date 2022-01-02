@@ -60,11 +60,9 @@ public class lista_opere_adapter extends RecyclerView.Adapter<lista_opere_adapte
 
         holder.nomeOpera.setText(opere.get(position).getTitolo());
         holder.parentLayout.setOnClickListener(view -> {
-            /*
-                Implementare onClick:
-                Intent swap  = new Intent(context,ListaOpere.class);
-                context.startActivity(swap);
-            */
+            Intent swap = new Intent(context, QRScanner.class);
+            swap.putExtra("opera", opere.get(position).getId());
+            context.startActivity(swap);
         });
     }
 
