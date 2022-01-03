@@ -9,7 +9,7 @@
             android:title="@string/dashboard" />
 
         <item
-            android:id="@+id/path_menu"
+            android:id="@+id/login_menu"
             android:checked="false"
             android:icon="@drawable/ic_login"
             android:title="@string/login" />

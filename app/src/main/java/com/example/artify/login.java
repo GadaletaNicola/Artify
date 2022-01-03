@@ -40,7 +40,7 @@ public class login extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         if (user != null) {
-            Intent intent = new Intent(login.this, dashboard.class);
+            Intent intent = new Intent(login.this, HomePage.class);
             startActivity(intent);
             finish();
         }
@@ -62,7 +62,7 @@ public class login extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(login.this, "Accesso effettuato!", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(login.this, dashboard.class);
+                        Intent intent = new Intent(login.this, HomePage.class);
                         startActivity(intent);
                         finish();
 

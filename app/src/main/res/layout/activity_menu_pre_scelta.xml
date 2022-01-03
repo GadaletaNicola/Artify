@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/VeryLightBlue"
+    tools:context=".MenuPreScelta">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/MenuPreSceltaHeader"
+        android:layout_width="412dp"
+        android:layout_height="74dp"
+        android:orientation="vertical"
+        android:elevation="1dp"
+        android:outlineAmbientShadowColor="@color/black"
+        android:defaultFocusHighlightEnabled="true"
+        android:background="@color/DarkLightBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="186dp"
+            android:layout_height="43dp"
+            android:text="@string/MenuPreSceltaHeader"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.353"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.516" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.432"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.483"
+            app:srcCompat="@drawable/ic_baseline_home"
+            android:background="?android:selectableItemBackground"
+            android:onClick="MenuPreSceltaToHome"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/ButtonContainer"
+        android:layout_width="345dp"
+        android:layout_height="454dp"
+        android:background="@color/DarkLightBlue"
+        android:defaultFocusHighlightEnabled="true"
+        android:elevation="1dp"
+        android:outlineAmbientShadowColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.623">
+
+        <Button
+            android:id="@+id/CercaOperaBtn"
+            style="@style/TipoPerocorsoBtn"
+            android:layout_width="146dp"
+            android:layout_height="61dp"
+            android:layout_marginVertical="100dp"
+            android:layout_marginStart="100dp"
+            android:text="@string/CercaOpera"
+            android:onClick="switchToListaOpere"/>
+
+        <Button
+            android:id="@+id/InizaPercorsoBtn"
+            style="@style/TipoPerocorsoBtn"
+            android:layout_width="146dp"
+            android:layout_height="61dp"
+            android:layout_marginVertical="290dp"
+            android:layout_marginStart="100dp"
+            android:text="@string/InizaPercorso"
+            android:onClick="switchToTipoPercorso"/>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

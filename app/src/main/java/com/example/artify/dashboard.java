@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +31,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class dashboard extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private String userId;
     private DatabaseReference mDatabase;
@@ -43,26 +45,10 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         //Handle click in drawer menu
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         setNavigationViewListener();
-
-        //Handle click on logout
-        RelativeLayout rl = (RelativeLayout) findViewById(R.id.logout_layout);
-        rl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(dashboard.this, "Disconnesso!", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(dashboard.this, login.class);
-                startActivity(i);
-                finish();
-            }
-        });
-
         @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Intent i;
-
-
         switch (item.getItemId()) {
 
             case R.id.path_menu: {
@@ -103,6 +89,16 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                     textView.setText((String) task.getResult().child("punti").getValue());
                     textView.setTypeface(null, Typeface.BOLD);
                 }
+            }
+        });
+
+        //Handle click on home
+        ImageButton iB = (ImageButton) findViewById(R.id.homeButton);
+        iB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(dashboard.this, HomePage.class);
+                startActivity(i);
             }
         });
 
