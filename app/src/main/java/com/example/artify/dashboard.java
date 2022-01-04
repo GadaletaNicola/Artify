@@ -41,32 +41,6 @@ public class dashboard extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        /*
-        //Handle click in drawer menu
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        setNavigationViewListener();
-        @SuppressLint("NonConstantResourceId")
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Intent i;
-        switch (item.getItemId()) {
-
-            case R.id.path_menu: {
-                i = new Intent(this, tipo_percorso.class);
-                startActivity(i);
-                drawerLayout.closeDrawer(GravityCompat.START);
-                return true;
-            }
-        }
-        return true;
-    }
-
-    private void setNavigationViewListener() {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.side_menu);
-        navigationView.setNavigationItemSelectedListener(this);
-    }
-
-        */
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         userId = FirebaseAuth.getInstance().getUid();
