@@ -1,7 +1,17 @@
 package com.example.artify;
 
+import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,6 +20,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,7 +49,11 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     private NavigationView navigationView;
     private FirebaseAuth mAuth;
     private RelativeLayout rLLogout;
-
+    private ArrayList<BluetoothDevice> devices = new ArrayList<>();
+    private BroadcastReceiver broadcastReceiver;
+    private BluetoothAdapter bluetoothAdapter;
+    private NotificationManagerCompat notificationManager;
+    private final static int CAMERA_REQUEST_CODE = 101;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +69,8 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         //Handle click in drawer menu
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         setNavigationViewListener();
+        checkPermission();
+        bluetoothManager();
 
         //Handle click on logout
         rLLogout = (RelativeLayout) findViewById(R.id.logout_layout);
@@ -60,6 +80,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(HomePage.this, "Disconnesso!", Toast.LENGTH_LONG).show();
                 Intent i = new Intent(HomePage.this, login.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);
                 finish();
             }
@@ -143,4 +164,66 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         }
     }
 
+    private void bluetoothManager() {
+        NotificationChannel channel = new NotificationChannel("ArtifyChannel", "Artify", NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationManager manager = getSystemService(NotificationManager.class);
+        manager.createNotificationChannel(channel);
+
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (bluetoothAdapter == null) {
+            Toast.makeText(this, "Bluetooth not supported", Toast.LENGTH_SHORT).show();
+        } else {
+            if (!bluetoothAdapter.isEnabled()) {
+                Toast.makeText(this, "Enable Bluetooth", Toast.LENGTH_SHORT).show();
+            }
+
+            new Thread() {
+                @Override
+                public void run() {
+                    while (true) {
+                        bluetoothAdapter.startDiscovery();
+                    }
+                }
+            }.start();
+            broadcastReceiver = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    String action = intent.getAction();
+                    int i = 0;
+                    if (action.equals(BluetoothDevice.ACTION_FOUND)) {
+                        BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                        if (!device.getName().isEmpty() && device.getName().contains("artify")) {
+                            devices.add(device);
+                            NotificationCompat.Builder builder = new NotificationCompat.Builder(HomePage.this, "ArtifyChannel")
+                                    .setSmallIcon(R.drawable.ic_baseline_message_24)
+                                    .setContentTitle("Opera trovata!!")
+                                    .setContentText("Opera:" + device.getName())
+                                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                            notificationManager = NotificationManagerCompat.from(HomePage.this);
+                            notificationManager.notify(i, builder.build());
+                            i++;
+                        }
+                    }
+                }
+            };
+            IntentFilter intentFilter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+            registerReceiver(broadcastReceiver, intentFilter);
+        }
+    }
+
+    private void checkPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_ADMIN) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions( new String[] {Manifest.permission.BLUETOOTH_ADMIN}, 3);
+        }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions( new String[] {Manifest.permission.CAMERA}, CAMERA_REQUEST_CODE);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(broadcastReceiver);
+    }
 }

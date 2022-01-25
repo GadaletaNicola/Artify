@@ -22,6 +22,7 @@ public class tipo_percorso extends AppCompatActivity {
         btnClicked = findViewById(view.getId());
 
         Intent switcher = new Intent(this,ListaZone.class).putExtra("TipoPercorso", btnClicked.getText().toString());
+        switcher.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(switcher);
     }
 }

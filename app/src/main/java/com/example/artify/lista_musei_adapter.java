@@ -65,6 +65,7 @@ public class lista_musei_adapter extends RecyclerView.Adapter<lista_musei_adapte
         holder.parentLayout.setOnClickListener(view -> {
             Intent switcher  = new Intent(context,MenuPreScelta.class);
             switcher.putExtra("MuseoCliccato",musei.get(position).getNome());
+            switcher.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(switcher);
         });
 

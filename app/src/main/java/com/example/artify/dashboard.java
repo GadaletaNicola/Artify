@@ -72,6 +72,7 @@ public class dashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(dashboard.this, HomePage.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);
             }
         });

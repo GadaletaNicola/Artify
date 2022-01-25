@@ -84,6 +84,7 @@ public class sign_up extends AppCompatActivity {
                         insertInDB(user, tmpUser);
 
                         Intent intent=new Intent(sign_up.this, login.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                     }
                     else {

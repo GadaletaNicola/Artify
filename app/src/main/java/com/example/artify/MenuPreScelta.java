@@ -24,6 +24,7 @@ public class MenuPreScelta extends AppCompatActivity {
         Intent switcher = new Intent(this,tipo_percorso.class);
         switcher.putExtra("preMenuScelta",btnClicked.getText());
         switcher.putExtra("MuseoCliccato",contextIntent.getStringExtra("MuseoCliccato"));
+        switcher.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(switcher);
     }
 
@@ -31,11 +32,13 @@ public class MenuPreScelta extends AppCompatActivity {
         Intent switcher = new Intent(this, ListaOpere.class);
         switcher.putExtra("preMenuScelta","");
         switcher.putExtra("MuseoCliccato",contextIntent.getStringExtra("MuseoCliccato"));
+        switcher.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(switcher);
     }
 
     public void MenuPreSceltaToHome(View view){
         Intent switcher = new Intent(this,HomePage.class);
+        switcher.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(switcher);
         finish();
     }
