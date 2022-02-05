@@ -46,6 +46,11 @@ public class ListaOpere extends AppCompatActivity {
         });
     }
 
+    /**
+     * il metodo permette l'inizializzazione della recyclerView
+     * @param snapshot: snapshot del database
+     * @param contextIntent: Intent per la gestione di informazioni esterne
+     */
     private void initRv(DataSnapshot snapshot, Intent contextIntent) {
         int i = 0;
         for (DataSnapshot sn : snapshot.getChildren()) {
@@ -60,14 +65,29 @@ public class ListaOpere extends AppCompatActivity {
             String zona = sn.getValue(Opera.class).getZona();
             opera.setZona(zona);
 
-            int voto = sn.getValue(Opera.class).getVoto();
+            float voto = sn.getValue(Opera.class).getVoto();
             opera.setVoto(voto);
 
             String descrizione = sn.getValue(Opera.class).getDescrizione();
             opera.setDescrizione(descrizione);
 
+            String autore = sn.getValue(Opera.class).getAutore();
+            opera.setAutore(autore);
+
+            String dimensione = sn.getValue(Opera.class).getDimensione();
+            opera.setDimensione(dimensione);
+
+            String data = sn.getValue(Opera.class).getData();
+            opera.setData(data);
+
+            String stile = sn.getValue(Opera.class).getStile();
+            opera.setStile(stile);
+
             String urlImg = sn.getValue(Opera.class).getImg();
             opera.setImg(urlImg);
+
+            int numeroVoti = sn.getValue(Opera.class).getNumeroVoti();
+            opera.setNumeroVoti(numeroVoti);
 
             if (zona.equals(contextIntent.getStringExtra("ZonaCliccata"))) {
                 com.example.artify.ListaOpere.this.opere.add(i, opera);

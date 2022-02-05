@@ -46,6 +46,10 @@ public class login extends AppCompatActivity {
         }
     }
 
+    /**
+     * Metodo per la gestione del login nell'applicazione
+     * @param view: view di riferimento
+     */
     public void Login(View view) {
         String textEmail = email.getText().toString();
         String textPassword = password.getText().toString();
@@ -61,13 +65,13 @@ public class login extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(login.this, "Accesso effettuato!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(login.this, R.string.accessDone, Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(login.this, HomePage.class);
                         startActivity(intent);
                         finish();
 
                     } else {
-                        Toast.makeText(login.this, "Accesso non andato a buon fine!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(login.this, R.string.accessFailure, Toast.LENGTH_LONG).show();
 
                     }
                 }
@@ -75,8 +79,13 @@ public class login extends AppCompatActivity {
         }
     }
 
+    /**
+     * Il metodo gestisce lo switch tra l'activity login e l'activity di registrazione
+     * @param view: view di riferimento
+     */
     public void switchToSignUp(View view) {
         Intent intent = new Intent(this, sign_up.class);
         startActivity(intent);
+        finish();
     }
 }

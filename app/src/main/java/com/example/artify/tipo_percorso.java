@@ -17,12 +17,16 @@ public class tipo_percorso extends AppCompatActivity {
         setContentView(R.layout.activity_tipo_percorso);
     }
 
-
+    /**
+     * il metodo permette lo switch tra l'activity corrente e la lista delle zone
+     * @param view: view di riferiemnto
+     */
     public void switchToListaZone(View view){
         btnClicked = findViewById(view.getId());
 
         Intent switcher = new Intent(this,ListaZone.class).putExtra("TipoPercorso", btnClicked.getText().toString());
         switcher.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(switcher);
+        finish();
     }
 }

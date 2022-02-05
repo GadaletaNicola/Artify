@@ -6,7 +6,12 @@ public class Opera {
     private String titolo = "";
     private String zona = "";
     private String descrizione = "";
-    private int voto = 0;
+    private String stile = "";
+    private String Dimensione = "";
+    private String Data = "";
+    private String Autore = "";
+    private float voto = 0;
+    private int numeroVoti = 0;
 
     public Opera(){}
 
@@ -15,7 +20,7 @@ public class Opera {
         this.img = img;
     }
 
-    public void setVoto(int voto) {
+    public void setVoto(float voto) {
         this.voto = voto;
     }
 
@@ -35,14 +40,22 @@ public class Opera {
         this.titolo = titolo;
     }
 
+    public void setAutore(String autore) { Autore = autore; }
 
+    public void setData(String data) { Data = data; }
+
+    public void setDimensione(String dimensione) { Dimensione = dimensione; }
+
+    public void setStile(String stile) { this.stile = stile; }
+
+    public void setNumeroVoti(int numero) { numeroVoti = numero; }
 
 
     public String getImg() {
         return img;
     }
 
-    public int getVoto() {
+    public float getVoto() {
         return voto;
     }
 
@@ -61,4 +74,14 @@ public class Opera {
     public String getTitolo() {
         return titolo;
     }
+
+    public String getAutore() { return Autore; }
+
+    public String getData() { return Data; }
+
+    public String getDimensione() { return Dimensione; }
+
+    public String getStile() { return stile; }
+
+    public int getNumeroVoti() { return numeroVoti; }
 }

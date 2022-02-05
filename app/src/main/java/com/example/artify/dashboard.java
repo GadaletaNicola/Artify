@@ -49,9 +49,7 @@ public class dashboard extends AppCompatActivity {
 
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                } else {
+                if (task.isSuccessful()) {
                     TextView textView = (TextView) findViewById(R.id.dash_mailIns_tw);
                     textView.setText((String) task.getResult().child("email").getValue());
                     textView.setTypeface(null, Typeface.BOLD);
@@ -62,6 +60,8 @@ public class dashboard extends AppCompatActivity {
                     textView = (TextView) findViewById(R.id.dash_pointsReached_tw);
                     textView.setText((String) task.getResult().child("punti").getValue());
                     textView.setTypeface(null, Typeface.BOLD);
+                }else{
+                    Toast.makeText(dashboard.this, R.string.ReadDbError, Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -74,11 +74,8 @@ public class dashboard extends AppCompatActivity {
                 Intent i = new Intent(dashboard.this, HomePage.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);
+                finish();
             }
         });
-
-
     }
-
-
 }

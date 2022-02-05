@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/VeryLightBlue"
+    android:background="@color/white"
     tools:context=".MenuPreScelta">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/MenuPreSceltaHeader"
-        android:layout_width="462dp"
-        android:layout_height="70dp"
+        android:layout_width="761dp"
+        android:layout_height="61dp"
         android:layout_marginStart="32dp"
         android:background="@color/DarkLightBlue"
         android:defaultFocusHighlightEnabled="true"
@@ -19,7 +19,7 @@
         android:outlineAmbientShadowColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintHorizontal_bias="0.758"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -55,18 +55,17 @@
 
     <FrameLayout
         android:id="@+id/ButtonContainer"
-        android:layout_width="462dp"
-        android:layout_height="303dp"
+        android:layout_width="597dp"
+        android:layout_height="260dp"
         android:background="@color/DarkLightBlue"
         android:defaultFocusHighlightEnabled="true"
         android:elevation="1dp"
         android:outlineAmbientShadowColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.904">
+        app:layout_constraintVertical_bias="0.894">
 
         <Button
             android:id="@+id/CercaOperaBtn"
@@ -75,7 +74,7 @@
 
             android:layout_height="61dp"
             android:layout_marginVertical="50dp"
-            android:layout_marginStart="150dp"
+            android:layout_marginStart="230dp"
             android:onClick="switchToListaOpere"
             android:text="@string/CercaOpera" />
 
@@ -85,7 +84,7 @@
             android:layout_width="146dp"
             android:layout_height="61dp"
             android:layout_marginVertical="190dp"
-            android:layout_marginStart="150dp"
+            android:layout_marginStart="230dp"
             android:onClick="switchToTipoPercorso"
             android:text="@string/InizaPercorso" />
 

@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -28,6 +29,9 @@ public class QRscanner extends AppCompatActivity {
         codeScanner();
     }
 
+    /**
+     * Metodo utile per la gestione del QR code scanner
+     */
     private void codeScanner() {
         codeScanner = new CodeScanner(this, scannerView);
         codeScanner.setDecodeCallback(new DecodeCallback() {
@@ -36,7 +40,11 @@ public class QRscanner extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(QRscanner.this, result.getText(), Toast.LENGTH_SHORT).show();
+                        Intent intent= new Intent(QRscanner.this, DescrizioneOpera.class);
+                        intent.putExtra("idOpera", result.getText());
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
                     }
                 });
             }

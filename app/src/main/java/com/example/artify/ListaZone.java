@@ -50,6 +50,11 @@ public class ListaZone extends AppCompatActivity{
         });
     }
 
+    /**
+     * Il metodo gestisce l'inizializzazione della recyclerView
+     * @param snapshot:snapshot del database
+     * @param contextIntent: Intent per la gestione di informazioni esterne
+     */
     private void initRv(DataSnapshot snapshot,Intent contextIntent){
         int i=0;
         for (DataSnapshot sn : snapshot.getChildren()) {
@@ -57,6 +62,9 @@ public class ListaZone extends AppCompatActivity{
 
             String nomeZona = sn.getKey();
             zone.setNomeZona(nomeZona);
+
+            String nomeMuseo = sn.getValue(Zone.class).getImg();
+            zone.setNomeMuseo(nomeMuseo);
 
             String urlImg = sn.getValue(Zone.class).getImg();
             zone.setImg(urlImg);

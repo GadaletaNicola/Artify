@@ -11,13 +11,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/VeryLightBlue"
+        android:background="@color/white"
         android:defaultFocusHighlightEnabled="true"
         android:elevation="1dp">
 
         <LinearLayout
             android:id="@+id/HeadBanner"
-            android:layout_width="476dp"
+            android:layout_width="match_parent"
             android:layout_height="80dp"
             android:background="@color/DarkLightBlue"
             android:orientation="vertical"
@@ -40,8 +40,8 @@
         </LinearLayout>
 
         <FrameLayout
-            android:layout_width="474dp"
-            android:layout_height="308dp"
+            android:layout_width="597dp"
+            android:layout_height="278dp"
             android:background="@color/DarkLightBlue"
             android:elevation="1dp"
             app:layout_constraintBottom_toBottomOf="parent"

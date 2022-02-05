@@ -53,6 +53,8 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     private BroadcastReceiver broadcastReceiver;
     private BluetoothAdapter bluetoothAdapter;
     private NotificationManagerCompat notificationManager;
+    private NotificationChannel channel;
+    private NotificationManager manager;
     private final static int CAMERA_REQUEST_CODE = 101;
     
     @Override
@@ -70,7 +72,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         setNavigationViewListener();
         checkPermission();
-        bluetoothManager();
+        bluetoothNotifyManager();
 
         //Handle click on logout
         rLLogout = (RelativeLayout) findViewById(R.id.logout_layout);
@@ -78,11 +80,10 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                Toast.makeText(HomePage.this, "Disconnesso!", Toast.LENGTH_LONG).show();
+                Toast.makeText(HomePage.this, R.string.disconnected, Toast.LENGTH_LONG).show();
                 Intent i = new Intent(HomePage.this, login.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);
-                finish();
             }
         });
 
@@ -101,7 +102,10 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         hideItem();
     }
 
-
+    /**
+     * il metodo inizializza il recycler view dei musei
+     * @param snapshot: snapshot del database
+     */
     private void initRv(DataSnapshot snapshot){
 
         for (DataSnapshot sn : snapshot.getChildren()) {
@@ -114,12 +118,18 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             museo.setImg(urlImg);
 
             HomePage.this.musei.add(museo);
-
         }
-
         lista_musei_adapter adapter = new lista_musei_adapter(musei, getApplicationContext());
         listaMusei.setAdapter(adapter);
         listaMusei.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        channel = new NotificationChannel("ArtifyChannel", "Artify", NotificationManager.IMPORTANCE_DEFAULT);
+        manager = getSystemService(NotificationManager.class);
+        manager.createNotificationChannel(channel);
     }
 
     @Override
@@ -144,12 +154,17 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         return true;
     }
 
-
+    /**
+     * Il metodo permette il setting del NavigationView Listener
+     */
     private void setNavigationViewListener() {
         navigationView = (NavigationView) findViewById(R.id.side_menu);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    /**
+     * Il metodo permette di gestire l'attivatzione e la disattivazione del menu laterale
+     */
     private void hideItem()
     {
         mAuth = FirebaseAuth.getInstance();
@@ -164,54 +179,62 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         }
     }
 
-    private void bluetoothManager() {
-        NotificationChannel channel = new NotificationChannel("ArtifyChannel", "Artify", NotificationManager.IMPORTANCE_DEFAULT);
-        NotificationManager manager = getSystemService(NotificationManager.class);
-        manager.createNotificationChannel(channel);
+    /**
+     *Il metodo permette di gestire le Notifiche inerenti il ritrovamento di opere tramite
+     *l' uso del bluetooth
+     */
+    private void bluetoothNotifyManager() {
+
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (bluetoothAdapter == null) {
-            Toast.makeText(this, "Bluetooth not supported", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.BTnotSupported, Toast.LENGTH_SHORT).show();
         } else {
             if (!bluetoothAdapter.isEnabled()) {
-                Toast.makeText(this, "Enable Bluetooth", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.BToff, Toast.LENGTH_SHORT).show();
             }
 
             new Thread() {
                 @Override
                 public void run() {
-                    while (true) {
+                    while(true) {
                         bluetoothAdapter.startDiscovery();
                     }
                 }
             }.start();
-            broadcastReceiver = new BroadcastReceiver() {
-                @Override
-                public void onReceive(Context context, Intent intent) {
-                    String action = intent.getAction();
-                    int i = 0;
-                    if (action.equals(BluetoothDevice.ACTION_FOUND)) {
-                        BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                        if (!device.getName().isEmpty() && device.getName().contains("artify")) {
-                            devices.add(device);
-                            NotificationCompat.Builder builder = new NotificationCompat.Builder(HomePage.this, "ArtifyChannel")
-                                    .setSmallIcon(R.drawable.ic_baseline_message_24)
-                                    .setContentTitle("Opera trovata!!")
-                                    .setContentText("Opera:" + device.getName())
-                                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-                            notificationManager = NotificationManagerCompat.from(HomePage.this);
-                            notificationManager.notify(i, builder.build());
-                            i++;
+
+                broadcastReceiver = new BroadcastReceiver() {
+                    @Override
+                    public void onReceive(Context context, Intent intent) {
+                        String action = intent.getAction();
+                        int i = 0;
+                        if (action.equals(BluetoothDevice.ACTION_FOUND)) {
+                            BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                            if (device.getName().contains("artify")) {
+                                devices.add(device);
+                                NotificationCompat.Builder builder = new NotificationCompat.Builder(HomePage.this, "ArtifyChannel")
+                                        .setSmallIcon(R.drawable.ic_baseline_message_24)
+                                        .setContentTitle(getText(R.string.notfyTitle))
+                                        .setContentText("Opera:" + device.getName())
+                                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                                notificationManager = NotificationManagerCompat.from(HomePage.this);
+                                notificationManager.notify(i, builder.build());
+                                i++;
+                            }
                         }
                     }
-                }
-            };
-            IntentFilter intentFilter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-            registerReceiver(broadcastReceiver, intentFilter);
-        }
+                };
+                IntentFilter intentFilter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+
+                registerReceiver(broadcastReceiver, intentFilter);
+            }
     }
 
+    /**
+     * Metodo utile alla verifica dei permessi garantiti
+     */
     private void checkPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_ADMIN) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions( new String[] {Manifest.permission.BLUETOOTH_ADMIN}, 3);

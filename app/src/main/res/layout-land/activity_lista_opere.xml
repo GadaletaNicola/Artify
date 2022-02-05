@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/LightBlue"
+    android:background="@color/white"
     android:defaultFocusHighlightEnabled="true"
     tools:context=".ListaOpere">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/HeadBanner"
-        android:layout_width="545dp"
-        android:layout_height="74dp"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
         android:background="@color/DarkLightBlue"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,8 +40,8 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
-        android:layout_width="545dp"
-        android:layout_height="314dp"
+        android:layout_width="597dp"
+        android:layout_height="272dp"
         android:background="@color/DarkLightBlue"
         android:elevation="1dp"
         android:defaultFocusHighlightEnabled="true"

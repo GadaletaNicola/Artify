@@ -11,14 +11,16 @@
     <string name="surname">Cognome</string>
     <string name="email">Email</string>
     <string name="signup_button">Registrati</string>
-    <string name="not_accounted">Non hai ancora un account? Registrati!</string>
+    <string name="not_accounted">Non hai ancora un account?</string>
     <string name="accounted">Hai già un account? Accedi!</string>
+    <string name="accessDone"> Accesso Effettuato!</string>
 
     <!-- Stringhe Activity listamuseiadapter -->
     <string name="MuseoDefalut">Museo Base</string>
 
     <!-- Stringhe Activity HomePage -->
     <string name="HomePageHeader">HOME PAGE</string>
+    <string name="disconnected">Disconnesso</string>
 
     <!-- Stringhe Activity Dashboard  -->
     <string name="dashboard">Dashboard</string>
@@ -65,6 +67,10 @@
     <string name="error_username">Username errato</string>
     <string name="error_password">Password errata</string>
     <string name="error_signUp">Registrazione non andata a buon fine!</string>
+    <string name="BTnotSupported">Bluethoot non supportato</string>
+    <string name="BToff">Abilita il Bluethoot</string>
+    <string name="accessFailure">Ops! qualcosa è anndato storto!</string>
+    <string name="NotifyError">Ops!Una notifica sembra non partire,sistemo subito!</string>
 
     <!-- Descrizioni -->
     <string name="DescrizioneLogoZone">Immagine identificativa delle zone</string>
@@ -75,5 +81,21 @@
     <string name="DescrizioneDash_badge">Immagine badge</string>
     <string name="DescrizioneHomePageBtn">Bottone per tornare alla homepage</string>
     <string name="DescrizioneImageButtonHome">Bottone per tornare alla home</string>
+    <string name="DescrizioneImageButton_opera">Bottone per tornare indietro a elenco opere</string>
+    <string name="DescrizioneImageButton_game">Bottone per accedre al qr code</string>
+
+    <!-- Stringhe Activity Opera  -->
+    <string name="opera">Informazioni Opera</string>
+    <string name="nome_opera">Nome Opera</string>
+    <string name="stile_opera">Stile Opera</string>
+    <string name="dimensioniOpera">Dimensioni opera</string>
+    <string name="descrizioneOpera">Descrizione Opera</string>
+    <string name="paragrafoDescrizioneOpera">Descrizione</string>
+    <string name="autoreOpera">Autore Opera</string>
+    <string name="data">Data di creazione:</string>
+    <string name="dataOpera">Data Opera</string>
+
+    <!-- Notifiche -->
+    <string name="notfyTitle">Hey hai visto,c\'è un\'Opera!</string>
 
 </resources>

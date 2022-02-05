@@ -49,6 +49,10 @@ public class sign_up extends AppCompatActivity {
         reference= rootNode.getReference("users");
     }
 
+    /**
+     * Metodo utile per la creazione dell' utente da inserire nel db
+     * @param view: view di riferimento
+     */
     public void createUser(View view){
         String textName=name.getText().toString();
         String textSurname=surname.getText().toString();
@@ -96,11 +100,21 @@ public class sign_up extends AppCompatActivity {
 
     }
 
+    /**
+     * il metodo permette l'inserimento dell'utente nel db
+     * @param userGiven: Utente da inserire nel db
+     * @param tmpUser: Oggetto temporaneo contenente le info dell' utente da inserire
+     */
     public void insertInDB(FirebaseUser userGiven, User tmpUser){
         setHashMap(userGiven, tmpUser);
         reference.child(userGiven.getUid()).setValue(userInfo);
     }
 
+    /**
+     * il metodo permette il setting dell'hashmap utile alla registrazione dell' utente nel db
+     * @param userGiven:Utente da inserire nel db
+     * @param tmpUser: Oggetto temporaneo contenente le info dell' utente da inserire
+     */
     public void setHashMap(FirebaseUser userGiven, User tmpUser){
         userInfo=new HashMap<>();
 
@@ -113,8 +127,13 @@ public class sign_up extends AppCompatActivity {
         userInfo.putIfAbsent("email", userGiven.getEmail());
     }
 
+    /**
+     * il metodo permette lo switch tra l'activity corrente e quella di login
+     * @param view: view di riferimento
+     */
     public void switchToLogIn(View view) {
         Intent intent=new Intent(this, login.class);
         startActivity(intent);
+        finish();
     }
 }
