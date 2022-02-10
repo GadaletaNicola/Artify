@@ -2,114 +2,114 @@
 
 
     <!-- Stringhe Activity Login e registrazione  -->
-    <string name="login_text">Accedi ad Artify</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
-    <string name="login_button">Accedi</string>
-    <string name="reg_text">Registrati ad Artify</string>
-    <string name="name">Nome</string>
-    <string name="surname">Cognome</string>
-    <string name="email">Email</string>
-    <string name="signup_button">Registrati</string>
-    <string name="not_accounted">Non hai ancora un account?</string>
-    <string name="accounted">Hai già un account? Accedi!</string>
-    <string name="accessDone"> Accesso Effettuato!</string>
+    <string name="login_text">Login to Artify</string>
+    <string name="username" translatable="false">Username</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="login_button">Login</string>
+    <string name="reg_text">Sign up to Artify</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="signup_button">Sign up</string>
+    <string name="not_accounted">Don\'t have an account?</string>
+    <string name="accounted">Already have an account? Login!</string>
+    <string name="accessDone">Logged in!</string>
 
     <!-- Stringhe Activity listamuseiadapter -->
-    <string name="MuseoDefalut">Museo Base</string>
+    <string name="MuseoDefalut">Default Museum</string>
 
     <!-- Stringhe Activity HomePage -->
-    <string name="HomePageHeader">HOME PAGE</string>
-    <string name="disconnected">Disconnesso</string>
+    <string name="HomePageHeader" translatable="false">HOME PAGE</string>
+    <string name="disconnected">Disconnected</string>
 
     <!-- Stringhe Activity Dashboard  -->
-    <string name="dashboard">Dashboard</string>
-    <string name="dashboard_land">D\na\ns\nh\nb\no\na\nr\nd</string>
-    <string name="welcome">Benvenuto,</string>
-    <string name="user">Guest</string>
-    <string name="mailIns"><b></b></string>
-    <string name="mail">E-mail:</string>
-    <string name="dashboardName">Nome:</string>
-    <string name="nameIns"><b></b></string>
-    <string name="points">I tuoi punti:</string>
-    <string name="pointsReached"></string>
-    <string name="badges">Badges:</string>
-    <string name="path">Musei</string>
-    <string name="settings">Impostazioni</string>
-    <string name="logout">Logout</string>
-    <string name="login">Login</string>
+    <string name="dashboard" translatable="false">Dashboard</string>
+    <string name="dashboard_land" translatable="false">D\na\ns\nh\nb\no\na\nr\nd</string>
+    <string name="welcome">Welcome,</string>
+    <string name="user" translatable="false">Guest</string>
+    <string name="mailIns" translatable="false"><b></b></string>
+    <string name="mail" translatable="false">E-mail:</string>
+    <string name="dashboardName">Name:</string>
+    <string name="nameIns" translatable="false"><b></b></string>
+    <string name="points">"Your score: "</string>
+    <string name="pointsReached" translatable="false"></string>
+    <string name="badges" translatable="false">Badges:</string>
+    <string name="path">Museums</string>
+    <string name="settings">Settings</string>
+    <string name="logout" translatable="false">Logout</string>
+    <string name="login" translatable="false">Login</string>
 
     <!-- Stringhe Activity MenuPreScelta -->
-    <string name="MenuPreSceltaHeader"></string>
-    <string name="CercaOpera">Cerca Opera</string>
-    <string name="InizaPercorso">Inizia Percoso</string>
+    <string name="MenuPreSceltaHeader" translatable="false"></string>
+    <string name="CercaOpera">Find Artwork</string>
+    <string name="InizaPercorso">Start Itinerary</string>
 
     <!-- Stringhe Activity lista_zone/listadapter  -->
-    <string name="app_name">Artify</string>
+    <string name="app_name" translatable="false">Artify</string>
     <string name="ZoneMuseoHeader">ZONE MUSEO</string>
     <string name="TestoListAdapterDefault">Zona Base</string>
 
     <!-- Stringhe Activity lista_opere/listaOpereAdapter  -->
     <string name="OpereMuseoHeader">OPERE</string>
-    <string name="TestoListaOpereAdapterDefault">Opera Base</string>
-    <string name="Cerca">Cerca</string>
+    <string name="TestoListaOpereAdapterDefault">Default Artwork</string>
+    <string name="Cerca">Search</string>
 
     <!-- Stringhe Activity tipo percorso  -->
-    <string name="TipoPercorsiHeader">TIPO PERCORSI</string>
-    <string name="PercorsoBreve">Breve</string>
-    <string name="PercorsoMedio">Medio</string>
-    <string name="PercorsoLungo">Lungo</string>
+    <string name="TipoPercorsiHeader">ITINERARY TYPE</string>
+    <string name="PercorsoBreve">Short</string>
+    <string name="PercorsoMedio">Medium</string>
+    <string name="PercorsoLungo">Long</string>
 
     <!-- Errori -->
-    <string name="ReadDbError">Errore! Impossibile leggere dal Database</string>
-    <string name="error_name">Nome errato</string>
-    <string name="error_surname">Cognome errato</string>
-    <string name="error_email">Email errata</string>
-    <string name="error_username">Username errato</string>
-    <string name="error_password">Password errata</string>
-    <string name="error_signUp">Registrazione non andata a buon fine!</string>
-    <string name="BTnotSupported">Bluethoot non supportato</string>
-    <string name="BToff">Abilita il Bluethoot</string>
-    <string name="accessFailure">Ops! qualcosa è anndato storto!</string>
-    <string name="NotifyError">Ops!Una notifica sembra non partire,sistemo subito!</string>
+    <string name="ReadDbError" translatable="false">Errore! Impossibile leggere dal Database</string>
+    <string name="error_name">Incorrect name</string>
+    <string name="error_surname">Incorrect surname</string>
+    <string name="error_email">Incorrect email</string>
+    <string name="error_username">Incorrect username</string>
+    <string name="error_password">Incorrect password</string>
+    <string name="error_signUp">Signup failed!</string>
+    <string name="BTnotSupported">Bluetooth not supported</string>
+    <string name="BToff">Enable Bluetooth</string>
+    <string name="accessFailure">Oops! Something went wrong!</string>
+    <string name="NotifyError" translatable="false">Ops!Una notifica sembra non partire,sistemo subito!</string>
 
     <!-- Descrizioni -->
-    <string name="DescrizioneLogoZone">Immagine identificativa delle zone</string>
-    <string name="DescrizioneLogoOpera">Immagine identificativa delle opere</string>
-    <string name="DescrizioneDrawer_top_iw">Immagine Utene Loggato</string>
-    <string name="DescrizioneImageView_user">Immagine Utene Loggato</string>
-    <string name="DescrizioneImageButton">Bottone per la modifica dell immagine</string>
-    <string name="DescrizioneDash_badge">Immagine badge</string>
-    <string name="DescrizioneHomePageBtn">Bottone per tornare alla homepage</string>
-    <string name="DescrizioneImageButtonHome">Bottone per tornare alla home</string>
-    <string name="DescrizioneImageButton_opera">Bottone per tornare indietro a elenco opere</string>
-    <string name="DescrizioneImageButton_game">Bottone per accedre al qr code</string>
+    <string name="DescrizioneLogoZone" translatable="false">Immagine identificativa delle zone</string>
+    <string name="DescrizioneLogoOpera" translatable="false">Immagine identificativa delle opere</string>
+    <string name="DescrizioneDrawer_top_iw" translatable="false">Immagine Utene Loggato</string>
+    <string name="DescrizioneImageView_user" translatable="false">Immagine Utene Loggato</string>
+    <string name="DescrizioneImageButton" translatable="false">Bottone per la modifica dell immagine</string>
+    <string name="DescrizioneDash_badge" translatable="false">Immagine badge</string>
+    <string name="DescrizioneHomePageBtn" translatable="false">Bottone per tornare alla homepage</string>
+    <string name="DescrizioneImageButtonHome" translatable="false">Bottone per tornare alla home</string>
+    <string name="DescrizioneImageButton_opera" translatable="false">Bottone per tornare indietro a elenco opere</string>
+    <string name="DescrizioneImageButton_game" translatable="false">Bottone per accedre al qr code</string>
 
     <!-- Stringhe Activity Opera  -->
-    <string name="opera">Informazioni Opera</string>
-    <string name="nome_opera">Nome Opera</string>
-    <string name="stile_opera">Stile Opera</string>
-    <string name="dimensioniOpera">Dimensioni opera</string>
-    <string name="descrizioneOpera">Descrizione Opera</string>
-    <string name="paragrafoDescrizioneOpera">Descrizione</string>
-    <string name="autoreOpera">Autore Opera</string>
-    <string name="data">Data di creazione:</string>
-    <string name="dataOpera">Data Opera</string>
+    <string name="opera">Artwork Information</string>
+    <string name="nome_opera">Artwork title</string>
+    <string name="stile_opera">Artwork Style</string>
+    <string name="dimensioniOpera">Artwork size</string>
+    <string name="descrizioneOpera">Artwork Description</string>
+    <string name="paragrafoDescrizioneOpera">Description</string>
+    <string name="autoreOpera">Artist</string>
+    <string name="data">Creation date:</string>
+    <string name="dataOpera">Artwork Date</string>
 
     <!-- Stringhe Activity Puzzle -->
-    <string name="chronometerLabel"><b>Tempo trascorso:</b></string>
-    <string name="movesPuzzle"><b>Mosse:</b></string>
-    <string name="back_to_opera_button">Torna all\'opera</string>
-    <string name="congratulations">Complimenti!</string>
-    <string name="puzzle_completed_time">Hai completato il puzzle in</string>
-    <string name="secondsPuzzle">secondi!</string>
-    <string name="earned_points_label">Hai guadagnato </string>
-    <string name="pointsPuzzle">punti!</string>
-    <string name="ok_button">OK</string>
-    <string name="imagehelp_content_description">Immagine di aiuto</string>
-    <string name="invalid_move">Mossa non valida</string>
+    <string name="chronometerLabel"><b>Elapsed time:</b></string>
+    <string name="movesPuzzle"><b>Moves:</b></string>
+    <string name="back_to_opera_button">Back to artwork</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="puzzle_completed_time">You completed the puzzle in</string>
+    <string name="secondsPuzzle">seconds!</string>
+    <string name="earned_points_label">"You earned "</string>
+    <string name="pointsPuzzle">points!</string>
+    <string name="ok_button" translatable="false">OK</string>
+    <string name="imagehelp_content_description">Reference image</string>
+    <string name="invalid_move">Invalid move</string>
 
     <!-- Notifiche -->
-    <string name="notfyTitle">Hey hai visto,c\'è un\'Opera!</string>
+    <string name="notfyTitle" translatable="false">Hey hai visto,c\'è un\'Opera!</string>
 
 </resources>
