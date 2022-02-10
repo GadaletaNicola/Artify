@@ -50,8 +50,7 @@
         android:layout_gravity="center_vertical|center_horizontal"
         android:contentDescription="@string/DescrizioneImageView_user"
         android:adjustViewBounds="true"
-        android:scaleType="centerInside"
-        android:background="@color/black"/>
+        android:scaleType="centerInside"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -105,6 +104,7 @@
             android:elevation="1dp"
             app:srcCompat="@drawable/img_game"
             app:tint="@color/white"
+            android:onClick="game"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     </RelativeLayout>

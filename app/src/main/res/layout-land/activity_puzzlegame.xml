@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayoutPuzzleGame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".Puzzlegame">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:baselineAligned="false"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="horizontal">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintTop"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:background="#3F52E6"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:elevation="1dp"
+            android:paddingRight="10dp">
+
+            <ImageView
+                android:id="@+id/imageHelp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="30dp"
+                android:clickable="true"
+                android:contentDescription="@string/imagehelp_content_description"
+                android:elevation="1dp"
+                android:onClick="imageHelpClick" />
+
+            <TextView
+                android:id="@+id/chronometerLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/chronometerLabel"
+                android:textColor="#fefefe"
+                android:textSize="25sp" />
+
+            <Chronometer
+                android:id="@+id/chronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/chronometerLabel"
+                app:layout_constraintEnd_toEndOf="@id/chronometerLabel"
+                app:layout_constraintTop_toBottomOf="@id/chronometerLabel"
+                android:gravity="center"
+                android:textColor="#fefefe"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/movesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/chronometerLabel"
+                app:layout_constraintEnd_toEndOf="@id/chronometerLabel"
+                app:layout_constraintTop_toBottomOf="@id/chronometer"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="@string/movesPuzzle"
+                android:textColor="#fefefe"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/moves"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/chronometerLabel"
+                app:layout_constraintEnd_toEndOf="@id/chronometerLabel"
+                app:layout_constraintTop_toBottomOf="@id/movesLabel"
+                android:gravity="center"
+                android:textColor="#fefefe"
+                android:textSize="25sp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/relativeBottom"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <com.example.artify.GestureDetectGridView
+                android:id="@+id/gridView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="20dp"
+                android:elevation="1dp"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintBottom_toTopOf="@+id/back_to_opera_button"
+                app:layout_constraintDimensionRatio="W, 1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/back_to_opera_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#3f52e6"
+                android:elevation="1dp"
+                android:text="@string/back_to_opera_button"
+                android:textColor="#fefefe"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gridView"
+                android:onClick="backToOpera" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

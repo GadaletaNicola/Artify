@@ -66,6 +66,7 @@ public class listadapter extends RecyclerView.Adapter<listadapter.ListAdapterHol
 
         holder.parentLayout.setOnClickListener(view -> {
             Intent switcher  = new Intent(context,ListaOpere.class);
+            switcher.putExtra("MuseoCliccato", contextIntent.getStringExtra("MuseoCliccato"));
             switcher.putExtra("TipoPercorso", contextIntent.getStringExtra("TipoPercorso"));
             switcher.putExtra("ZonaCliccata",zone.get(position).getNomeZona());
             switcher.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

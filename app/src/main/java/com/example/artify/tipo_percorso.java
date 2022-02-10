@@ -24,7 +24,11 @@ public class tipo_percorso extends AppCompatActivity {
     public void switchToListaZone(View view){
         btnClicked = findViewById(view.getId());
 
+        Intent intent = getIntent();
+        String museo = intent.getStringExtra("MuseoCliccato");
+
         Intent switcher = new Intent(this,ListaZone.class).putExtra("TipoPercorso", btnClicked.getText().toString());
+        switcher.putExtra("MuseoCliccato", museo);
         switcher.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(switcher);
         finish();

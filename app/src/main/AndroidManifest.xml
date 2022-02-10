@@ -47,6 +47,12 @@
             android:name=".ListaZone"
             android:exported="true" />
         <activity
+            android:name=".Puzzlegame"
+            android:exported="true" />
+        <activity
+            android:name=".PuzzleCompleted"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

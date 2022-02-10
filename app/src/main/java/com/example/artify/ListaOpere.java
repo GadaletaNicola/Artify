@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,6 +31,7 @@ public class ListaOpere extends AppCompatActivity {
     private RecyclerView ListaOpere = null;
     private String searchedText;
     private String museoCliccato;
+    private Intent contextIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,7 @@ public class ListaOpere extends AppCompatActivity {
 
         ImageButton searchButton = (ImageButton)findViewById(R.id.searchButton);
 
-        Intent contextIntent = getIntent();
+        contextIntent = getIntent();
         museoCliccato = contextIntent.getStringExtra("MuseoCliccato");
         ListaOpere = findViewById(R.id.ListaOpereMuseo);
         rootNode = FirebaseDatabase.getInstance("https://artify-2ead0-default-rtdb.europe-west1.firebasedatabase.app/");
@@ -51,7 +53,6 @@ public class ListaOpere extends AppCompatActivity {
                 searchButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
                         takeText();
                         opere.clear();
                         initRv(snapshot, contextIntent);
@@ -65,9 +66,7 @@ public class ListaOpere extends AppCompatActivity {
             }
         });
 
-
     }
-
 
     public void takeText(){
         EditText testo = (EditText) findViewById(R.id.searchedText);
@@ -120,9 +119,34 @@ public class ListaOpere extends AppCompatActivity {
             int numeroVoti = sn.getValue(Opera.class).getNumeroVoti();
             opera.setNumeroVoti(numeroVoti);
 
-            if ((zona.equals(contextIntent.getStringExtra("ZonaCliccata")) || titolo.equals(searchedText)) && museo.equals(museoCliccato)) {
-                com.example.artify.ListaOpere.this.opere.add(opera);
+            if(museo.equals(museoCliccato)) {
+                Log.d("(MUSEO EQUALS TRUE) ZONA: ", contextIntent.getStringExtra("ZonaCliccata"));
+                if (zona.equals(contextIntent.getStringExtra("ZonaCliccata"))) {
+                    if (titolo.equals(searchedText)) {
+                        com.example.artify.ListaOpere.this.opere.add(opera);
+                    } else {
+                        if (searchedText == null) {
+                            com.example.artify.ListaOpere.this.opere.add(opera);
+                        }
+                    }
+                } else {
+                    if (titolo.equals(searchedText)) {
+                        com.example.artify.ListaOpere.this.opere.add(opera);
+                    } else {
+                        if (searchedText == null) {
+                            com.example.artify.ListaOpere.this.opere.add(opera);
+                        }
+                    }
+                }
             }
+
+
+            /*if (zona.equals(contextIntent.getStringExtra("ZonaCliccata")))
+                //if(titolo.equals(searchedText))
+                    if(museo.equals(museoCliccato))
+                        if(zona.isEmpty()) {
+                            com.example.artify.ListaOpere.this.opere.add(opera);
+            }*/
         }
 
         lista_opere_adapter adapter = new lista_opere_adapter(opere, getApplicationContext(), contextIntent);

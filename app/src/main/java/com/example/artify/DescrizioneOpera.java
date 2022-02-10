@@ -161,7 +161,10 @@ public class DescrizioneOpera extends AppCompatActivity {
      * @param view: view di riferimento
      */
     public void game(View view){
-        //
+        Intent goPuzzle = new Intent(DescrizioneOpera.this, Puzzlegame.class);
+        goPuzzle.putExtra("URLOpera", opera.getImg());
+        goPuzzle.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(goPuzzle);
     }
 
     /**
@@ -172,7 +175,7 @@ public class DescrizioneOpera extends AppCompatActivity {
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.setType("text/plain");
-        sendIntent.putExtra(Intent.EXTRA_TEXT,"Ciao, ho visitato l'opera "+opera.getTitolo()+" scarica artify da Google play!!");
+        sendIntent.putExtra(Intent.EXTRA_TEXT,"Ciao, ho visitato l'opera "+opera.getTitolo()+"! Scarica Artify da Google Play!!");
 
         Intent shareIntent = Intent.createChooser(sendIntent,null);
         startActivity(shareIntent);

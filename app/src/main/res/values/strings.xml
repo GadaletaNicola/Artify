@@ -96,6 +96,19 @@
     <string name="data">Data di creazione:</string>
     <string name="dataOpera">Data Opera</string>
 
+    <!-- Stringhe Activity Puzzle -->
+    <string name="chronometerLabel"><b>Tempo trascorso:</b></string>
+    <string name="movesPuzzle"><b>Mosse:</b></string>
+    <string name="back_to_opera_button">Torna all\'opera</string>
+    <string name="congratulations">Complimenti!</string>
+    <string name="puzzle_completed_time">Hai completato il puzzle in</string>
+    <string name="secondsPuzzle">secondi!</string>
+    <string name="earned_points_label">Hai guadagnato </string>
+    <string name="pointsPuzzle">punti!</string>
+    <string name="ok_button">OK</string>
+    <string name="imagehelp_content_description">Immagine di aiuto</string>
+    <string name="invalid_move">Mossa non valida</string>
+
     <!-- Notifiche -->
     <string name="notfyTitle">Hey hai visto,c\'è un\'Opera!</string>
 
