@@ -29,6 +29,7 @@ public class ListaOpere extends AppCompatActivity {
     private final String ROUTES_PATH = "opere/";
     private RecyclerView ListaOpere = null;
     private String searchedText;
+    private String museoCliccato;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class ListaOpere extends AppCompatActivity {
         ImageButton searchButton = (ImageButton)findViewById(R.id.searchButton);
 
         Intent contextIntent = getIntent();
+        museoCliccato = contextIntent.getStringExtra("MuseoCliccato");
         ListaOpere = findViewById(R.id.ListaOpereMuseo);
         rootNode = FirebaseDatabase.getInstance("https://artify-2ead0-default-rtdb.europe-west1.firebasedatabase.app/");
         DatabaseReference routesPath = rootNode.getReference(ROUTES_PATH);
@@ -109,13 +111,16 @@ public class ListaOpere extends AppCompatActivity {
             String stile = sn.getValue(Opera.class).getStile();
             opera.setStile(stile);
 
+            String museo = sn.getValue(Opera.class).getMuseo();
+            opera.setMuseo(museo);
+
             String urlImg = sn.getValue(Opera.class).getImg();
             opera.setImg(urlImg);
 
             int numeroVoti = sn.getValue(Opera.class).getNumeroVoti();
             opera.setNumeroVoti(numeroVoti);
 
-            if (zona.equals(contextIntent.getStringExtra("ZonaCliccata")) || titolo.equals(searchedText) ) {
+            if ((zona.equals(contextIntent.getStringExtra("ZonaCliccata")) || titolo.equals(searchedText)) && museo.equals(museoCliccato)) {
                 com.example.artify.ListaOpere.this.opere.add(opera);
             }
         }

@@ -10,10 +10,12 @@ public class Opera {
     private String Dimensione = "";
     private String Data = "";
     private String Autore = "";
+    private String Museo = "";
     private float voto = 0;
     private int numeroVoti = 0;
 
-    public Opera(){}
+    public Opera() {
+    }
 
 
     public void setImg(String img) {
@@ -36,19 +38,33 @@ public class Opera {
         this.id = id;
     }
 
+    public void setMuseo(String Museo) {
+        this.Museo = Museo;
+    }
+
     public void setTitolo(String titolo) {
         this.titolo = titolo;
     }
 
-    public void setAutore(String autore) { Autore = autore; }
+    public void setAutore(String autore) {
+        Autore = autore;
+    }
 
-    public void setData(String data) { Data = data; }
+    public void setData(String data) {
+        Data = data;
+    }
 
-    public void setDimensione(String dimensione) { Dimensione = dimensione; }
+    public void setDimensione(String dimensione) {
+        Dimensione = dimensione;
+    }
 
-    public void setStile(String stile) { this.stile = stile; }
+    public void setStile(String stile) {
+        this.stile = stile;
+    }
 
-    public void setNumeroVoti(int numero) { numeroVoti = numero; }
+    public void setNumeroVoti(int numero) {
+        numeroVoti = numero;
+    }
 
 
     public String getImg() {
@@ -71,17 +87,31 @@ public class Opera {
         return id;
     }
 
+    public String getMuseo() {
+        return Museo;
+    }
+
     public String getTitolo() {
         return titolo;
     }
 
-    public String getAutore() { return Autore; }
+    public String getAutore() {
+        return Autore;
+    }
 
-    public String getData() { return Data; }
+    public String getData() {
+        return Data;
+    }
 
-    public String getDimensione() { return Dimensione; }
+    public String getDimensione() {
+        return Dimensione;
+    }
 
-    public String getStile() { return stile; }
+    public String getStile() {
+        return stile;
+    }
 
-    public int getNumeroVoti() { return numeroVoti; }
+    public int getNumeroVoti() {
+        return numeroVoti;
+    }
 }
