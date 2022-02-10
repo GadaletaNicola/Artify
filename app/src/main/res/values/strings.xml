@@ -50,8 +50,9 @@
     <string name="TestoListAdapterDefault">Zona Base</string>
 
     <!-- Stringhe Activity lista_opere/listaOpereAdapter  -->
-    <string name="OpereMuseoHeader">OPERE MUSEO</string>
+    <string name="OpereMuseoHeader">OPERE</string>
     <string name="TestoListaOpereAdapterDefault">Opera Base</string>
+    <string name="Cerca">Cerca</string>
 
     <!-- Stringhe Activity tipo percorso  -->
     <string name="TipoPercorsiHeader">TIPO PERCORSI</string>

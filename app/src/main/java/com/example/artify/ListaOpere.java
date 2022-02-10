@@ -2,11 +2,17 @@ package com.example.artify;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -22,11 +28,14 @@ public class ListaOpere extends AppCompatActivity {
     private FirebaseDatabase rootNode = null;
     private final String ROUTES_PATH = "opere/";
     private RecyclerView ListaOpere = null;
+    private String searchedText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_opere);
+
+        ImageButton searchButton = (ImageButton)findViewById(R.id.searchButton);
 
         Intent contextIntent = getIntent();
         ListaOpere = findViewById(R.id.ListaOpereMuseo);
@@ -37,6 +46,15 @@ public class ListaOpere extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 initRv(snapshot, contextIntent);
+                searchButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        takeText();
+                        opere.clear();
+                        initRv(snapshot, contextIntent);
+                    }
+                });
             }
 
             @Override
@@ -44,7 +62,16 @@ public class ListaOpere extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), R.string.ReadDbError, Toast.LENGTH_LONG).show();
             }
         });
+
+
     }
+
+
+    public void takeText(){
+        EditText testo = (EditText) findViewById(R.id.searchedText);
+        searchedText = testo.getText().toString();
+    }
+
 
     /**
      * il metodo permette l'inizializzazione della recyclerView
@@ -52,7 +79,6 @@ public class ListaOpere extends AppCompatActivity {
      * @param contextIntent: Intent per la gestione di informazioni esterne
      */
     private void initRv(DataSnapshot snapshot, Intent contextIntent) {
-        int i = 0;
         for (DataSnapshot sn : snapshot.getChildren()) {
             Opera opera = new Opera();
 
@@ -89,11 +115,9 @@ public class ListaOpere extends AppCompatActivity {
             int numeroVoti = sn.getValue(Opera.class).getNumeroVoti();
             opera.setNumeroVoti(numeroVoti);
 
-            if (zona.equals(contextIntent.getStringExtra("ZonaCliccata"))) {
-                com.example.artify.ListaOpere.this.opere.add(i, opera);
+            if (zona.equals(contextIntent.getStringExtra("ZonaCliccata")) || titolo.equals(searchedText) ) {
+                com.example.artify.ListaOpere.this.opere.add(opera);
             }
-
-            i++;
         }
 
         lista_opere_adapter adapter = new lista_opere_adapter(opere, getApplicationContext(), contextIntent);

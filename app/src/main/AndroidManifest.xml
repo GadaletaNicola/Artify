@@ -38,7 +38,8 @@
             android:exported="true" />
         <activity
             android:name=".ListaOpere"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".tipo_percorso"
             android:exported="true" />
