@@ -14,11 +14,5 @@
             android:icon="@drawable/ic_login"
             android:title="@string/login" />
 
-        <item
-            android:id="@+id/settings_menu"
-            android:checked="false"
-            android:icon="@drawable/ic_settings"
-            android:title="@string/settings" />
-
     </group>
 </menu>

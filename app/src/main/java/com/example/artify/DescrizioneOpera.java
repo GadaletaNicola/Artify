@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -48,6 +50,7 @@ public class DescrizioneOpera extends AppCompatActivity {
 
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
+    private FirebaseAuth mAuth;
 
     private HashMap<String, Object> opere=null;
 
@@ -72,6 +75,13 @@ public class DescrizioneOpera extends AppCompatActivity {
         descrizioneOpera = (TextView) findViewById(R.id.descrizioneOpera);
         game = (ImageButton) findViewById(R.id.game);
         share = (ImageButton) findViewById(R.id.share);
+
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if (user == null) {
+            game.setVisibility(View.INVISIBLE);
+        }
 
         rootPath.addValueEventListener(new ValueEventListener() {
             @Override

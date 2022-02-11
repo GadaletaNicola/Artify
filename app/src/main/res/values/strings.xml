@@ -109,7 +109,12 @@
     <string name="imagehelp_content_description">Reference image</string>
     <string name="invalid_move">Invalid move</string>
 
+    <string name="logAsGuest">Log as Guest(limited funcionality)</string>
+    <string name="LimitedFunctionality">you must be logged,limited functionality!</string>
     <!-- Notifiche -->
     <string name="notfyTitle" translatable="false">Hey hai visto,c\'è un\'Opera!</string>
+
+
+
 
 </resources>

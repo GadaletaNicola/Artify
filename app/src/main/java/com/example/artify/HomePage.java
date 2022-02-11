@@ -73,33 +73,32 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         setNavigationViewListener();
         checkPermission();
         bluetoothNotifyManager();
+            //Handle click on logout
+            rLLogout = (RelativeLayout) findViewById(R.id.logout_layout);
+            rLLogout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    FirebaseAuth.getInstance().signOut();
+                    Toast.makeText(HomePage.this, R.string.disconnected, Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(HomePage.this, login.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(i);
+                }
+            });
 
-        //Handle click on logout
-        rLLogout = (RelativeLayout) findViewById(R.id.logout_layout);
-        rLLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(HomePage.this, R.string.disconnected, Toast.LENGTH_LONG).show();
-                Intent i = new Intent(HomePage.this, login.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(i);
-            }
-        });
+            rootPath.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    initRv(snapshot);
+                }
 
-        rootPath.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                initRv(snapshot);
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(getApplicationContext(), R.string.ReadDbError, Toast.LENGTH_LONG).show();
+                }
+            });
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getApplicationContext(), R.string.ReadDbError,Toast.LENGTH_LONG).show();
-            }
-        });
-
-        hideItem();
+            hideItem();
     }
 
     /**
@@ -172,6 +171,8 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         if (user == null) {
             Menu nav_Menu = navigationView.getMenu();
             nav_Menu.findItem(R.id.login_menu).setVisible(true);
+            nav_Menu.findItem(R.id.dashboard_menu).setEnabled(false);
+            Toast.makeText(this,getText(R.string.LimitedFunctionality),Toast.LENGTH_LONG).show();
         }else{
             Menu nav_Menu = navigationView.getMenu();
             nav_Menu.findItem(R.id.login_menu).setVisible(false);

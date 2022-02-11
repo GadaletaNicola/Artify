@@ -55,4 +55,6 @@
     <string name="stile_opera">Stile Opera</string>
     <string name="nome_opera">Nome Opera</string>
     <string name="opera">Dettaglio Opera</string>
+    <string name="logAsGuest">Accedi come Guest(funzionalità limitate)</string>
+    <string name="LimitedFunctionality">Log non effettuato, Funzionalità limitate!</string>
 </resources>

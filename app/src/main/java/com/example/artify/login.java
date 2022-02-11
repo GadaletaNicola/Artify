@@ -88,4 +88,15 @@ public class login extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+
+    /**
+     * Il metodo permette il login come guest
+     * @param view: view di riferimento
+     */
+    public void logAsGuest(View view){
+        Intent intent = new Intent(login.this, HomePage.class);
+        startActivity(intent);
+        finish();
+    }
 }
