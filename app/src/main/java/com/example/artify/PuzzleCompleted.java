@@ -3,6 +3,7 @@ package com.example.artify;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,12 +15,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
+import java.util.HashMap;
 
 public class PuzzleCompleted extends AppCompatActivity {
     private String URL;
     private ImageView img;
+    private FirebaseDatabase database;
+    private DatabaseReference rootPath;
+    private final String ROOTNODE="users/";
+    private FirebaseAuth mAuth;
+    private HashMap<String, Object> users=null;
+    private User user = new User();
+    private FirebaseUser firebaseUser;
+    private int points;
+    private boolean f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +59,6 @@ public class PuzzleCompleted extends AppCompatActivity {
         int movesInt = Integer.parseInt(movesString);
         String [] timeParts = chronometer.split(":");
 
-        int points;
         int hours = 0;
         int minutes = 0;
         int seconds = 0;
@@ -101,6 +119,74 @@ public class PuzzleCompleted extends AppCompatActivity {
 
         EarnedPointsTextView.setText(Integer.toString(points));
         SecondsTextView.setText(chronometer);
+
+
+        users = new HashMap<>();
+        mAuth = FirebaseAuth.getInstance();
+        firebaseUser = mAuth.getCurrentUser();
+
+        database = FirebaseDatabase.getInstance("https://artify-2ead0-default-rtdb.europe-west1.firebasedatabase.app/");
+        rootPath = database.getReference(ROOTNODE);
+        f = false;
+        rootPath.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                initUser(snapshot);
+                initPunti();
+                Log.d("PUNTI", String.valueOf(user.getPunti()));
+                Log.d("USERNAME", user.getUsername());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void initPunti() {
+        if(f == false) {
+            DatabaseReference userReference = rootPath.child(firebaseUser.getUid());
+            Log.d("USER", "" + user);
+            users.put("punti", user.getPunti() + points);
+            userReference.updateChildren(users);
+            f = true;
+        }
+    }
+
+    private void initUser(DataSnapshot snapshot) {
+        for (DataSnapshot sn : snapshot.getChildren()) {
+
+            String key = sn.getKey();
+
+            String email = sn.getValue(User.class).getEmail();
+
+            String name = sn.getValue(User.class).getName();
+
+            String surname = sn.getValue(User.class).getSurname();
+
+            String username = sn.getValue(User.class).getUsername();
+
+            String img = sn.getValue(User.class).getImg();
+
+            int punti = sn.getValue(User.class).getPunti();
+
+            String stato = sn.getValue(User.class).getStato();
+
+            if(key.equals(firebaseUser.getUid())) {
+                user.setEmail(email);
+
+                user.setName(name);
+
+                user.setSurname(surname);
+
+                user.setUsername(username);
+
+                user.setKey(key);
+
+                user.setPunti(punti);
+            }
+        }
     }
 
     private void setImage() {
@@ -120,7 +206,6 @@ public class PuzzleCompleted extends AppCompatActivity {
     }
 
     public void backToOpera(View view) {
-        Intent goList = new Intent(PuzzleCompleted.this, ListaOpere.class);
-        startActivity(goList);
+        finish();
     }
 }

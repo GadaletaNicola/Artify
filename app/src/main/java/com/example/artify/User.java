@@ -4,9 +4,11 @@ public class User {
     private String name;
     private String surname;
     private String username;
+    private String email;
     private String img="";
-    private int punti=0;
+    private int punti;
     private String stato="offline";
+    private String key;
 
     public void setUsername(String username) {
         this.username = username;
@@ -18,6 +20,18 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setPunti(int punti) {
+        this.punti = punti;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsername() {
@@ -32,9 +46,9 @@ public class User {
         return name;
     }
 
-    public String getPunti()
+    public int getPunti()
     {
-        return String.valueOf(punti);
+        return punti;
     }
 
     public String getStato()
@@ -45,5 +59,13 @@ public class User {
     public String getImg()
     {
         return img;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

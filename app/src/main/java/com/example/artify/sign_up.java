@@ -121,7 +121,7 @@ public class sign_up extends AppCompatActivity {
         userInfo.putIfAbsent("surname", tmpUser.getSurname());
         userInfo.putIfAbsent("name", tmpUser.getName());
         userInfo.putIfAbsent("username", tmpUser.getUsername());
-        userInfo.putIfAbsent("punti", tmpUser.getPunti());
+        userInfo.putIfAbsent("punti", String.valueOf(tmpUser.getPunti()));
         userInfo.putIfAbsent("immagine", tmpUser.getImg());
         userInfo.putIfAbsent("stato", tmpUser.getStato());
         userInfo.putIfAbsent("email", userGiven.getEmail());

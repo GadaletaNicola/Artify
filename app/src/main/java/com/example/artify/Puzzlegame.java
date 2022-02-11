@@ -277,6 +277,7 @@ public class Puzzlegame extends AppCompatActivity {
             completed.putExtra("Chronometer", chronometer.getText().toString());
             completed.putExtra("Moves", Integer.toString(mCounter));
             context.startActivity(completed);
+            finish();
         }
     }
 
@@ -405,6 +406,7 @@ public class Puzzlegame extends AppCompatActivity {
             completed.putExtra("Chronometer", chronometer.getText().toString());
             completed.putExtra("Moves", Integer.toString(mCounter));
             context.startActivity(completed);
+            finish();
         }
     }
 

@@ -58,7 +58,7 @@ public class dashboard extends AppCompatActivity {
                     textView.setText(computedString);
                     textView.setTypeface(null, Typeface.BOLD);
                     textView = (TextView) findViewById(R.id.dash_pointsReached_tw);
-                    textView.setText((String) task.getResult().child("punti").getValue());
+                    textView.setText(task.getResult().child("punti").getValue().toString());
                     textView.setTypeface(null, Typeface.BOLD);
                 }else{
                     Toast.makeText(dashboard.this, R.string.ReadDbError, Toast.LENGTH_LONG).show();
