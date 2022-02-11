@@ -54,7 +54,7 @@
 
         <EditText
             android:id="@+id/searchedText"
-            android:layout_width="200dp"
+            android:layout_width="150dp"
             android:layout_height="48dp"
             android:inputType="textPersonName"
             android:hint="@string/Cerca"

@@ -120,7 +120,6 @@ public class ListaOpere extends AppCompatActivity {
             opera.setNumeroVoti(numeroVoti);
 
             if(museo.equals(museoCliccato)) {
-                Log.d("(MUSEO EQUALS TRUE) ZONA: ", contextIntent.getStringExtra("ZonaCliccata"));
                 if (zona.equals(contextIntent.getStringExtra("ZonaCliccata"))) {
                     if (titolo.equals(searchedText)) {
                         com.example.artify.ListaOpere.this.opere.add(opera);
@@ -139,14 +138,6 @@ public class ListaOpere extends AppCompatActivity {
                     }
                 }
             }
-
-
-            /*if (zona.equals(contextIntent.getStringExtra("ZonaCliccata")))
-                //if(titolo.equals(searchedText))
-                    if(museo.equals(museoCliccato))
-                        if(zona.isEmpty()) {
-                            com.example.artify.ListaOpere.this.opere.add(opera);
-            }*/
         }
 
         lista_opere_adapter adapter = new lista_opere_adapter(opere, getApplicationContext(), contextIntent);
