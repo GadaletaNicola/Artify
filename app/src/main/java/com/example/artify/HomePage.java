@@ -176,6 +176,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         }else{
             Menu nav_Menu = navigationView.getMenu();
             nav_Menu.findItem(R.id.login_menu).setVisible(false);
+
             rLLogout.setVisibility(View.VISIBLE);
         }
     }

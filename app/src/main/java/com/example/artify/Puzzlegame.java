@@ -118,6 +118,9 @@ public class Puzzlegame extends AppCompatActivity {
         state.putLong("chronometerTime", chronometer.getBase());
     }
 
+    /**
+     * Funzione per l'inizializzazione delle risorse
+     */
     private void init() {
         //For the grid
         mGridView = (GestureDetectGridView) findViewById(R.id.gridView);
@@ -151,6 +154,9 @@ public class Puzzlegame extends AppCompatActivity {
         backToOperaButton = (Button) findViewById(R.id.back_to_opera_button);
     }
 
+    /**
+     * Funzione per il posizionamento randomico dei pezzi
+     */
     private void scramble() {
         int index;
         String temp;
@@ -166,6 +172,9 @@ public class Puzzlegame extends AppCompatActivity {
         }
     }
 
+    /**
+     * Funzione per il rideimensionamento dell'immagine
+     */
     private void setDimensions() {
         ViewTreeObserver vto = mGridView.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -199,6 +208,11 @@ public class Puzzlegame extends AppCompatActivity {
         });
     }
 
+    /**
+     * funzione per la definizione dell'altezza della status bar
+     * @param context: context di riferimento
+     * @return altezza della status bar
+     */
     private int getStatusBarHeight(Context context) {
         int result = 0;
         int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -209,6 +223,10 @@ public class Puzzlegame extends AppCompatActivity {
         return result;
     }
 
+    /**
+     * Funzione per il display del puzzle
+     * @param context: context di riferimento
+     */
     private void display(Context context) {
         buttons = new ArrayList<>();
         Button button;
@@ -259,6 +277,11 @@ public class Puzzlegame extends AppCompatActivity {
         mGridView.setAdapter(new CustomAdapter(buttons, mColumnWidth, mColumnHeight));
     }
 
+    /**
+     * funzione per effettuare la rotazione dei singoli pezzi del puzzle
+     * @param context: context di riferimento
+     * @param pos: posizione
+     */
     public void rotate(Context context, int pos) {
         if (rotations[pos] == 3)
             rotations[pos] = 0;
@@ -281,6 +304,9 @@ public class Puzzlegame extends AppCompatActivity {
         }
     }
 
+    /**
+     * Funzione per il setting dell'immagine da ricomporre
+     */
     private void setImage() {
         gsRef = FirebaseStorage.getInstance().getReferenceFromUrl(URLOp);
 
@@ -300,7 +326,11 @@ public class Puzzlegame extends AppCompatActivity {
         });
     }
 
-
+    /**
+     * Funzione per lo split dell'immagine
+     * @param context:context di riferimento
+     * @return immagine splittata
+     */
     private ArrayList<Drawable> split(Context context) {
         ArrayList<Bitmap> chunkedImage = new ArrayList<>(DIMENSIONS);
         ArrayList<Drawable> chunkedImageDrawable = new ArrayList<>(DIMENSIONS);
@@ -325,6 +355,12 @@ public class Puzzlegame extends AppCompatActivity {
         return chunkedImageDrawable;
     }
 
+    /**
+     * Funzione per il movimento dei pezzi
+     * @param context: context di riferimento
+     * @param direction: direzione di spostamento
+     * @param position: posizione
+     */
     public void moveTiles(Context context, String direction, int position) {
 
         //Upper-left-corner tile
@@ -385,6 +421,12 @@ public class Puzzlegame extends AppCompatActivity {
         }
     }
 
+    /**
+     * Funzione per la gestione degli scambi tra pezzi
+     * @param context: context di riferimento
+     * @param position:posizione
+     * @param swap:posizione finale di swap
+     */
     private void swap(Context context, int position, int swap) {
         String tempImage = tileList[position + swap];
         tileList[position + swap] = tileList[position];
@@ -410,6 +452,10 @@ public class Puzzlegame extends AppCompatActivity {
         }
     }
 
+    /**
+     * funzione per la verifica della risoluzione del puzzle
+     * @return true/false
+     */
     private boolean isSolved() {
         boolean solved = false;
 
@@ -424,6 +470,10 @@ public class Puzzlegame extends AppCompatActivity {
         return solved;
     }
 
+    /**
+     * Funzione per visualizzare l'immagine completa
+     * @param imageHelp
+     */
     public void imageHelpClick(View imageHelp) {
         imageHelp.setClickable(false);
 
@@ -431,6 +481,7 @@ public class Puzzlegame extends AppCompatActivity {
 
         imageHelp.postDelayed(() -> imageHelp.setClickable(true), 1100);
     }
+
 
     private void imageHelpClickImplementation() {
         float xOriginChronometerLabel = chronometerLabelInLayout.getX();
@@ -555,6 +606,10 @@ public class Puzzlegame extends AppCompatActivity {
         return instance;
     }
 
+    /**
+     * Funzione per tornare all'opera di riferimento
+     * @param view: view di riferimento
+     */
     public void backToOpera(View view) {
         finish();
     }

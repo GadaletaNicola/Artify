@@ -132,9 +132,7 @@ public class PuzzleCompleted extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 initUser(snapshot);
-                initPunti();
-                Log.d("PUNTI", String.valueOf(user.getPunti()));
-                Log.d("USERNAME", user.getUsername());
+                setPunti();
             }
 
             @Override
@@ -144,16 +142,22 @@ public class PuzzleCompleted extends AppCompatActivity {
         });
     }
 
-    private void initPunti() {
+    /**
+     * Funzione per il setting dei punti nel DB
+     */
+    private void setPunti() {
         if(f == false) {
             DatabaseReference userReference = rootPath.child(firebaseUser.getUid());
-            Log.d("USER", "" + user);
             users.put("punti", user.getPunti() + points);
             userReference.updateChildren(users);
             f = true;
         }
     }
 
+    /**
+     * Funzione per l'inizializzazione dell'utente
+     * @param snapshot: snapshot del DB
+     */
     private void initUser(DataSnapshot snapshot) {
         for (DataSnapshot sn : snapshot.getChildren()) {
 
@@ -189,6 +193,9 @@ public class PuzzleCompleted extends AppCompatActivity {
         }
     }
 
+    /**
+     * Funzione per il setting dell'immagine da risolvere
+     */
     private void setImage() {
         Puzzlegame.gsRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
 
@@ -205,6 +212,10 @@ public class PuzzleCompleted extends AppCompatActivity {
         });
     }
 
+    /**
+     * funzione per tornare indietro all'opera
+     * @param view: view di riferimento
+     */
     public void backToOpera(View view) {
         finish();
     }
