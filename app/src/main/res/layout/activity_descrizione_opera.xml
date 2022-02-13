@@ -102,9 +102,9 @@
             android:background="@null"
             android:contentDescription="@string/DescrizioneImageButton_opera"
             android:elevation="1dp"
+            android:onClick="game"
             app:srcCompat="@drawable/img_game"
             app:tint="@color/white"
-            android:onClick="game"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     </RelativeLayout>

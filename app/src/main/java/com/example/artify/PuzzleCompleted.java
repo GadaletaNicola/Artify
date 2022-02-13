@@ -28,8 +28,11 @@ import com.google.firebase.storage.StorageReference;
 import java.util.HashMap;
 
 public class PuzzleCompleted extends AppCompatActivity {
+    //For the image
     private String URL;
     private ImageView img;
+
+    //Database
     private FirebaseDatabase database;
     private DatabaseReference rootPath;
     private final String ROOTNODE="users/";
@@ -37,6 +40,8 @@ public class PuzzleCompleted extends AppCompatActivity {
     private HashMap<String, Object> users=null;
     private User user = new User();
     private FirebaseUser firebaseUser;
+
+    //For the points
     private int points;
     private boolean f;
 
@@ -194,7 +199,7 @@ public class PuzzleCompleted extends AppCompatActivity {
     }
 
     /**
-     * Funzione per il setting dell'immagine da risolvere
+     * Funzione per il setting dell'immagine risolta
      */
     private void setImage() {
         Puzzlegame.gsRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {

@@ -71,15 +71,13 @@ public class Puzzlegame extends AppCompatActivity {
     private static float xScaleOriginImage;
     private static float yScaleOriginImage;
 
+    //For the image
     private String URLOp;
-    private Bitmap bit;
     public static StorageReference gsRef;
 
     //Go back
     private Button backToOperaButton;
-
     private static ArrayList<Button> buttons;
-
     private static Puzzlegame instance;
 
     @Override
@@ -105,8 +103,6 @@ public class Puzzlegame extends AppCompatActivity {
             chronometer.setBase(savedInstanceState.getLong("chronometerTime"));
             chronometer.start();
         }
-
-        //setDimensions();
     }
 
     @Override
@@ -173,7 +169,7 @@ public class Puzzlegame extends AppCompatActivity {
     }
 
     /**
-     * Funzione per il rideimensionamento dell'immagine
+     * Funzione per il ridimensionamento dell'immagine
      */
     private void setDimensions() {
         ViewTreeObserver vto = mGridView.getViewTreeObserver();
@@ -280,7 +276,7 @@ public class Puzzlegame extends AppCompatActivity {
     /**
      * funzione per effettuare la rotazione dei singoli pezzi del puzzle
      * @param context: context di riferimento
-     * @param pos: posizione
+     * @param pos: posizione del pezzo
      */
     public void rotate(Context context, int pos) {
         if (rotations[pos] == 3)
@@ -359,7 +355,7 @@ public class Puzzlegame extends AppCompatActivity {
      * Funzione per il movimento dei pezzi
      * @param context: context di riferimento
      * @param direction: direzione di spostamento
-     * @param position: posizione
+     * @param position: posizione del pezzo
      */
     public void moveTiles(Context context, String direction, int position) {
 
@@ -424,8 +420,8 @@ public class Puzzlegame extends AppCompatActivity {
     /**
      * Funzione per la gestione degli scambi tra pezzi
      * @param context: context di riferimento
-     * @param position:posizione
-     * @param swap:posizione finale di swap
+     * @param position: posizione del pezzo
+     * @param swap: indica il numero di celle di cui il pezzo si deve spostare
      */
     private void swap(Context context, int position, int swap) {
         String tempImage = tileList[position + swap];
@@ -471,7 +467,7 @@ public class Puzzlegame extends AppCompatActivity {
     }
 
     /**
-     * Funzione per visualizzare l'immagine completa
+     * Funzione per visualizzare l'immagine di aiuto al click
      * @param imageHelp
      */
     public void imageHelpClick(View imageHelp) {
