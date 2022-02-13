@@ -6,7 +6,7 @@ public class User {
     private String username;
     private String email;
     private String img="";
-    private String punti;
+    private String punti="0";
     private String stato="offline";
     private String key;
 
