@@ -68,7 +68,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/dashboard_bottom_bg"
+        android:background="@color/white"
         android:orientation="vertical"
         android:paddingLeft="25dp"
         android:paddingTop="25dp"
@@ -138,7 +138,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_weight="9"
-        android:background="@drawable/dashboard_bottom_bg"
+        android:background="@color/white"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
         android:paddingBottom="25dp">
