@@ -153,7 +153,8 @@ public class PuzzleCompleted extends AppCompatActivity {
     private void setPunti() {
         if(f == false) {
             DatabaseReference userReference = rootPath.child(firebaseUser.getUid());
-            users.put("punti", user.getPunti() + points);
+            int puntiFinal = Integer.parseInt(user.getPunti()) + points;
+            users.put("punti",String.valueOf(puntiFinal));
             userReference.updateChildren(users);
             f = true;
         }
@@ -178,7 +179,7 @@ public class PuzzleCompleted extends AppCompatActivity {
 
             String img = sn.getValue(User.class).getImg();
 
-            int punti = sn.getValue(User.class).getPunti();
+            int punti = Integer.parseInt(sn.getValue(User.class).getPunti()) ;
 
             String stato = sn.getValue(User.class).getStato();
 
@@ -193,7 +194,7 @@ public class PuzzleCompleted extends AppCompatActivity {
 
                 user.setKey(key);
 
-                user.setPunti(punti);
+                user.setPunti(String.valueOf(punti));
             }
         }
     }

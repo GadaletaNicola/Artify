@@ -6,7 +6,7 @@ public class User {
     private String username;
     private String email;
     private String img="";
-    private int punti;
+    private String punti;
     private String stato="offline";
     private String key;
 
@@ -22,7 +22,7 @@ public class User {
         this.name = name;
     }
 
-    public void setPunti(int punti) {
+    public void setPunti(String punti) {
         this.punti = punti;
     }
 
@@ -46,7 +46,7 @@ public class User {
         return name;
     }
 
-    public int getPunti()
+    public String getPunti()
     {
         return punti;
     }
